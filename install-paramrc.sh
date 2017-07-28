@@ -8,9 +8,13 @@
 # Faculty of Science and Technology, Thammasat University
 #
 export INSTALL_TYPE=full
+export NETWORK_TYPE=dvr_ovs
 #
 # There are two kinds of installation: full or compact.
 # Full has 2 compute node, while compact has only 1 compute. 
+# There are also two types of network: classic_ovs or dvr_ovs.
+# classic_ovs has no HA capability. dvr_ovs represents the 
+# distributed virtual router HA capability. 
 #
 export OPS_LOGIN_NAME=openstack
 export OPS_LOGIN_PASS=openstack

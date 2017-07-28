@@ -10,6 +10,7 @@
 . ./install-paramrc.sh
 #
 export ORIINSTALL_TYPE=vasabi-1234install_type4321-ibasav
+export ORINETWORK_TYPE=vasabi-1234network_type4321-ibasav
 export ORILOGINNAME=vasabi-1234loginname4321-ibasav
 export ORILOGINPASS=vasabi-1234loginpassword4321-ibasav
 export ORITIMEZONE=vasabi-1234timezone4321-ibasav
@@ -96,6 +97,22 @@ printf "\nsubstitution\n"
 printf "\n----------\n"
 printf "\n\n${CHANGETOPIC} changed to\n\n"
 sed -i "s/${ORIINSTALL_TYPE}/${INSTALL_TYPE}/g" ${SCRIPT_FILES}
+#
+# Change NETWORK_TYPE 
+#
+CHANGETOPIC=NETWORK_TYPE
+#
+printf "\nsubstitution\n"
+
+printf "\n----------\n"
+printf "\n\n${CHANGETOPIC} (in etc files) changed to\n\n"
+sed -i "s/${ORINETWORK_TYPE}/${NETWORK_TYPE}/g" ${ETC_FILES}
+#
+printf "\nsubstitution\n"
+#
+printf "\n----------\n"
+printf "\n\n${CHANGETOPIC} changed to\n\n"
+sed -i "s/${ORINETWORK_TYPE}/${NETWORK_TYPE}/g" ${SCRIPT_FILES}
 #
 # Change GATEWAY_IP_NIC 
 #
