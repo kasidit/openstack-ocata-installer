@@ -8,7 +8,7 @@ Faculty of science and technology <br>
 Thammasat University.
 
 <p>
-<b>THIS README IS UNDER CONSTRUCTION!</b> <br>
+<b>การติดตั้งระบบ OpenStack Ocata แบบ Multi-node & DVR ด้วย installation scripts บน ubuntu 16.04 </b> <br>
  
 <pre>
 $ cd $HOME
