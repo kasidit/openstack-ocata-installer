@@ -8,6 +8,12 @@
 # Faculty of Science and Technology, Thammasat University
 #
 #
+passwdtype=randompass
+passwdparam=${PASSWD_TYPE}
+#
+if [ "$passwdparam" == "$passwdtype" ]
+then
+#
 export RABBIT_PASS=$(openssl rand -hex 10)
 export ADMIN_TOKEN=$(openssl rand -hex 10)
 export METADATA_SECRET=$(openssl rand -hex 10)
@@ -28,27 +34,31 @@ export CEILOMETER_DBPASS=$(openssl rand -hex 10)
 export CEILOMETER_PASS=$(openssl rand -hex 10)
 export TROVE_DBPASS=$(openssl rand -hex 10)
 export TROVE_PASS=$(openssl rand -hex 10)
-
-#export RABBIT_PASS=vasabilabRABBIT_PASS
-#export ADMIN_TOKEN=vasabilabADMIN_TOKEN
-#export METADATA_SECRET=vasabilabMETADATA_SECRET
-#export KEYSTONE_DBPASS=vasabilabKEYSTONE_DBPASS
-#export GLANCE_DBPASS=vasabilabGLANCE_DBPASS
-#export GLANCE_PASS=vasabilabGLANCE_PASS
-#export NOVA_DBPASS=vasabilabNOVA_DBPASS
-#export NOVA_PASS=vasabilabNOVA_PASS
-#export DASH_DBPASS=vasabilabDASH_DBPASS
-#export CINDER_DBPASS=vasabilabCINDER_DBPASS
-#export CINDER_PASS=vasabilabCINDER_PASS
-#export NEUTRON_DBPASS=vasabilabNEUTRON_DBPASS
-#export NEUTRON_PASS=vasabilabNEUTRON_PASS
 #
-#export HEAT_DBPASS=vasabilabHEAT_DBPASS
-#export HEAT_PASS=vasabilabHEAT_PASS
-#export CEILOMETER_DBPASS=vasabilabCEILOMETER_DBPASS
-#export CEILOMETER_PASS=vasabilabCEILOMETER_PASS
-#export TROVE_DBPASS=vasabilabTROVE_DBPASS
-#export TROVE_PASS=vasabilabTROVE_PASS
+else
+#
+export RABBIT_PASS=RABBIT_PASS
+export ADMIN_TOKEN=ADMIN_TOKEN
+export METADATA_SECRET=METADATA_SECRET
+export KEYSTONE_DBPASS=KEYSTONE_DBPASS
+export GLANCE_DBPASS=GLANCE_DBPASS
+export GLANCE_PASS=GLANCE_PASS
+export NOVA_DBPASS=NOVA_DBPASS
+export NOVA_PASS=NOVA_PASS
+export DASH_DBPASS=DASH_DBPASS
+export CINDER_DBPASS=CINDER_DBPASS
+export CINDER_PASS=CINDER_PASS
+export NEUTRON_DBPASS=NEUTRON_DBPASS
+export NEUTRON_PASS=NEUTRON_PASS
+#
+export HEAT_DBPASS=HEAT_DBPASS
+export HEAT_PASS=HEAT_PASS
+export CEILOMETER_DBPASS=CEILOMETER_DBPASS
+export CEILOMETER_PASS=CEILOMETER_PASS
+export TROVE_DBPASS=TROVE_DBPASS
+export TROVE_PASS=TROVE_PASS
+#
+fi
 
 export ORIOPS_MYSQL_PASS=vasabilabMYSQL_PASS
 
