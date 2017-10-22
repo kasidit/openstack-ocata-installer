@@ -105,16 +105,17 @@ gateway 10.0.10.1
 dns-nameservers 8.8.8.8
 openstack@network:~$
 </pre>
+
 <pre>
 openstack@network:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:21:17
           inet addr:10.0.10.21  Bcast:10.0.10.255  Mask:255.255.255.0
           inet6 addr: fe80::254:9ff:fe25:2117/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:3324 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:1958 errors:0 dropped:0 overruns:0 carrier:0
+          RX packets:4053 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3014 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
-          RX bytes:4664932 (4.6 MB)  TX bytes:141208 (141.2 KB)
+          RX bytes:4715574 (4.7 MB)  TX bytes:255812 (255.8 KB)
 
 lo        Link encap:Local Loopback
           inet addr:127.0.0.1  Mask:255.0.0.0
@@ -125,7 +126,8 @@ lo        Link encap:Local Loopback
           collisions:0 txqueuelen:1
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
 
-openstack@network:~$ 
+openstack@network:~$
+
 </pre>
 <pre>
 openstack@network:~$ ip link
