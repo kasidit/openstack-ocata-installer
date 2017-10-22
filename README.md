@@ -45,16 +45,10 @@ Thammasat University.
  <b>เครื่อง controller </b> 
 <pre>
 openstack@controller:~$ cat /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
-
-# The loopback network interface
+...
 auto lo
 iface lo inet loopback
-
-# The primary network interface
+...
 auto ens3
 iface ens3 inet static
 address 10.0.10.11
@@ -62,6 +56,7 @@ netmask 255.255.255.0
 network 10.0.10.0
 gateway 10.0.10.1
 dns-nameservers 8.8.8.8
+
 openstack@controller:~$
 openstack@controller:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:20:17
