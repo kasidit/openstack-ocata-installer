@@ -30,8 +30,8 @@ Thammasat University.
 สำหรับเนต (network) กำหนดให้มีเนตสี่แบบเชื่อมกับเครื่องทั้งสี่ดังภาพได้แก่ 
  <ul>
  <li> management network: มี cidr 10.0.10.0/24 และ gateway คือ 10.0.10.1  openstack ใช้เนตนี้เป็นเนตหลักเพื่อออกอินเตอเนตและส่งคำสั่งระหว่างโหนด(หรือเครื่องทั้ง 4)ต่างๆของมัน 
- <li> data: ใช้สร้าง tunnel สำหรับส่งข้อมูลของ vm ที่จะถูกสร้างขึ้นภายใน openstack เนตนี้ใช้สำหรับส่งข้อมูลระว่าง vm กันเอง (east-west) และระหว่าง vm กับ internet (north-south)
- <li> vlan: ใช้ส่งข้อมูลระหว่าง vm ภายใน openstack กับ vlan network ภายนอก openstack 
+ <li> data tunnel network: ใช้สร้าง tunnel สำหรับส่งข้อมูลของ vm ที่จะถูกสร้างขึ้นภายใน openstack เนตนี้ใช้สำหรับส่งข้อมูลระว่าง vm กันเอง (east-west) และระหว่าง vm กับ internet (north-south)
+ <li> vlan network: ใช้ส่งข้อมูลระหว่าง vm ภายใน openstack กับ vlan network ภายนอก openstack 
  <li> external network: คือเนตที่เป็น internet service provider ของ openstack ในที่นี้เราจะใช้ management network 
  </ul>
 จากภาพที่ 1 สมมุตว่า NIC ที่ 1 คือ ens3 NIC ที่ 2 คือ ens4 NIC ที่ 3 คือ ens5 NIC ที่ 4 คือ ens6 จะเห็นว่าเครื่อง conroller มี ens3 อันเดียว เครื่อง network compute แบะ compute1 ทั้งหมด มี ens3 ถึง ens6
@@ -44,6 +44,25 @@ Thammasat University.
 <p>
  <b>เครื่อง controller </b> 
 <pre>
+openstack@controller:~$ cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto ens3
+iface ens3 inet static
+address 10.0.10.11
+netmask 255.255.255.0
+network 10.0.10.0
+gateway 10.0.10.1
+dns-nameservers 8.8.8.8
+openstack@controller:~$
 openstack@controller:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:20:17
           inet addr:10.0.10.11  Bcast:10.0.10.255  Mask:255.255.255.0
@@ -64,10 +83,17 @@ lo        Link encap:Local Loopback
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
 
 openstack@controller:~$
+openstack@controller:~$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:20:17 brd ff:ff:ff:ff:ff:ff
+openstack@controller:~$
 </pre>
 <p>
  <b>เครื่อง network </b>
 <pre>
+
 </pre>
 <p>
  <b>เครื่อง compute </b>
