@@ -255,13 +255,23 @@ openstack@compute1:~$
 <a id="part2"> 
 <h4>ส่วนที่ 2: ติดตั้งด้วย scripts</h4>
 </a>
+<p>
+นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง 
 <pre>
 $ cd $HOME
 $ git clone https://github.com/kasidit/openstack-ocata-installer
 $ cd openstack-ocata-installer
 </pre>
-
-
+เมื่อดู content ของ directory จะมีไฟล์และ subdirectory ดังนี้
+<pre>
+openstack@controller:~/openstack-ocata-installer$ ls
+config.d   exe-config-installer.sh  LICENSE                README.md
+documents  install-paramrc.sh       OPSInstaller-init.tar
+openstack@controller:~/openstack-ocata-installer$
+</pre>
+ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ install-paramrc.sh ซึ่ง default configuration สำหรับการติดตั้งจะเป็นการติดั้งแบบ 4 nodes และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
+<p>
+ต่อ.... soon
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
 </a>
