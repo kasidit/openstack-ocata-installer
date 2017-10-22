@@ -17,19 +17,18 @@ Thammasat University.
  <li> 3. <a href="#part3">ติดตั้งด้วย scripts</a>
 </ul>
 <p>
-<section id="part1"> 
-<h4>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h4>
+ <a id="part1"><h4>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h4></a>
 
   <p> 
   นศ จะเตรียมเครื่อง ubuntu 16.04.x 4 เครื่องเชื่อมต่อกันบนเนตดังภาพที่ 1 <br>
   <img src="documents/architecture.png"> 
- </section>
-<section id="part2"> 
+
+<a id="part2"> 
 <h4>ส่วนที่ 2: ติดตั้งด้วยมือ</h4>
-</section>
-<section id="part3"> 
+</a>
+<a id="part3"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วย scripts</h4>
-</section>
+</a>
 <pre>
 $ cd $HOME
 $ git clone https://github.com/kasidit/openstack-ocata-installer
