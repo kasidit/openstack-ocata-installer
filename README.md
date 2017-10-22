@@ -146,14 +146,60 @@ openstack@network:~$
 <p>
  <b>เครื่อง compute </b>
 <pre>
+openstack@compute:~$ cat /etc/network/interfaces
+...
+auto lo
+iface lo inet loopback
+...
+auto ens3
+iface ens3 inet static
+address 10.0.10.31
+netmask 255.255.255.0
+network 10.0.10.0
+gateway 10.0.10.1
+dns-nameservers 8.8.8.8
+openstack@compute:~$
 </pre>
 <pre>
+openstack@compute:~$ ifconfig
+ens3      Link encap:Ethernet  HWaddr 00:54:09:25:31:17
+          inet addr:10.0.10.31  Bcast:10.0.10.255  Mask:255.255.255.0
+          inet6 addr: fe80::254:9ff:fe25:3117/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3318 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1880 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:4664648 (4.6 MB)  TX bytes:134660 (134.6 KB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+
+openstack@compute:~$
 </pre>
 <pre>
+openstack@compute:~$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:31:17 brd ff:ff:ff:ff:ff:ff
+3: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:31:18 brd ff:ff:ff:ff:ff:ff
+4: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:31:19 brd ff:ff:ff:ff:ff:ff
+5: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:31:16 brd ff:ff:ff:ff:ff:ff
+openstack@compute:~$
 </pre>
 <p>
  <b>เครื่อง compute1 </b>
 <pre>
+
 </pre> 
 <pre>
 </pre>
