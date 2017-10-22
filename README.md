@@ -59,7 +59,7 @@ dns-nameservers 8.8.8.8
 
 openstack@controller:~$
 </pre>
-</pre>
+<pre>
 openstack@controller:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:20:17
           inet addr:10.0.10.11  Bcast:10.0.10.255  Mask:255.255.255.0
@@ -91,16 +91,71 @@ openstack@controller:~$
 <p>
  <b>เครื่อง network </b>
 <pre>
+openstack@network:~$ cat /etc/network/interfaces
+...
+auto lo
+iface lo inet loopback
+...
+auto ens3
+iface ens3 inet static
+address 10.0.10.21
+netmask 255.255.255.0
+network 10.0.10.0
+gateway 10.0.10.1
+dns-nameservers 8.8.8.8
+openstack@network:~$
+</pre>
+<pre>
+openstack@network:~$ ifconfig
+ens3      Link encap:Ethernet  HWaddr 00:54:09:25:21:17
+          inet addr:10.0.10.21  Bcast:10.0.10.255  Mask:255.255.255.0
+          inet6 addr: fe80::254:9ff:fe25:2117/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3324 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1958 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:4664932 (4.6 MB)  TX bytes:141208 (141.2 KB)
 
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+openstack@network:~$
+</pre>
+<pre>
+openstack@network:~$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:21:17 brd ff:ff:ff:ff:ff:ff
+3: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:21:18 brd ff:ff:ff:ff:ff:ff
+4: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:21:19 brd ff:ff:ff:ff:ff:ff
+5: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 00:54:09:25:21:16 brd ff:ff:ff:ff:ff:ff
+openstack@network:~$
 </pre>
 <p>
  <b>เครื่อง compute </b>
+<pre>
+</pre>
+<pre>
+</pre>
 <pre>
 </pre>
 <p>
  <b>เครื่อง compute1 </b>
 <pre>
 </pre> 
+<pre>
+</pre>
+<pre>
+</pre>
 
 <a id="part2"> 
 <h4>ส่วนที่ 2: ติดตั้งด้วย scripts</h4>
