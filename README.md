@@ -124,7 +124,8 @@ lo        Link encap:Local Loopback
           TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
-openstack@network:~$
+
+openstack@network:~$ 
 </pre>
 <pre>
 openstack@network:~$ ip link
