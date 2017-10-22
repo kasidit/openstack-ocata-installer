@@ -58,6 +58,8 @@ gateway 10.0.10.1
 dns-nameservers 8.8.8.8
 
 openstack@controller:~$
+</pre>
+</pre>
 openstack@controller:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:20:17
           inet addr:10.0.10.11  Bcast:10.0.10.255  Mask:255.255.255.0
@@ -76,8 +78,9 @@ lo        Link encap:Local Loopback
           TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
-
 openstack@controller:~$
+</pre>
+<pre>
 openstack@controller:~$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
