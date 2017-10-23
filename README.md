@@ -293,7 +293,7 @@ $ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
 <p>
 แต่ถ้าติดตั้งบน kvm หรือเครื่องจริงก็ให้ใช้ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ที่มีอยู่แต่เดิมเป็นตัวอย่าง <br> 
 <p>
-<u><a id="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a></u><br>
+<i><a id="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a></i><br>
 <p>
 ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่ง default configuration สำหรับการติดตั้งจะเป็นการติดั้งแบบ 4 nodes และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
 <p>
