@@ -66,13 +66,13 @@ export GATEWAY_IP_NIC=ens3
 #
 # ---- controller host ----
 #
-export CONTROLLER_IP=10.0.0.11
+export CONTROLLER_IP=10.0.10.11
 export CONTROLLER_IP_NIC=ens3
 #
 # This GATEWAY_IP define the IP addr of the management network 
 # gateway on every node.
 #
-export GATEWAY_IP=10.0.10.11
+export GATEWAY_IP=10.0.10.1
 #
 #
 # ---- network host ----
