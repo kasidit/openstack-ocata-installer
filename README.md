@@ -270,7 +270,8 @@ openstack@compute1:~$
 <a id="part2"> 
 <h4>ส่วนที่ 2: ติดตั้งด้วย scripts</h4>
 </a>
-<i><a id="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a></i>
+<p>
+<i><a id="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a></i><br>
 <p>
 นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง 
 <pre>
@@ -290,8 +291,8 @@ openstack@controller:~/openstack-ocata-installer$
 $ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
 </pre>
 แต่ถ้าติดตั้งบน kvm หรือเครื่องจริงก็ให้ใช้ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ที่มีอยู่แต่เดิมเป็นตัวอย่าง 
-p
-<i><a id="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a></i>
+<p>
+<i><u><a id="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a></i></u><br>
 <p>
 ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่ง default configuration สำหรับการติดตั้งจะเป็นการติดั้งแบบ 4 nodes และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
 <p>
