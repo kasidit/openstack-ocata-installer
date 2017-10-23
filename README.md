@@ -169,10 +169,10 @@ ens3      Link encap:Ethernet  HWaddr 00:54:09:25:31:17
           inet addr:10.0.10.31  Bcast:10.0.10.255  Mask:255.255.255.0
           inet6 addr: fe80::254:9ff:fe25:3117/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:3318 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:1880 errors:0 dropped:0 overruns:0 carrier:0
+          RX packets:5322 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3096 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
-          RX bytes:4664648 (4.6 MB)  TX bytes:134660 (134.6 KB)
+          RX bytes:7418377 (7.4 MB)  TX bytes:224114 (224.1 KB)
 
 lo        Link encap:Local Loopback
           inet addr:127.0.0.1  Mask:255.0.0.0
@@ -184,6 +184,7 @@ lo        Link encap:Local Loopback
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
 
 openstack@compute:~$
+
 </pre>
 <pre>
 openstack@compute:~$ ip link
@@ -223,10 +224,10 @@ ens3      Link encap:Ethernet  HWaddr 00:54:09:25:32:17
           inet addr:10.0.10.32  Bcast:10.0.10.255  Mask:255.255.255.0
           inet6 addr: fe80::254:9ff:fe25:3217/64 Scope:Link
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:3341 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:1909 errors:0 dropped:0 overruns:0 carrier:0
+          RX packets:5345 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3117 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000
-          RX bytes:4666590 (4.6 MB)  TX bytes:137162 (137.1 KB)
+          RX bytes:7418954 (7.4 MB)  TX bytes:226152 (226.1 KB)
 
 lo        Link encap:Local Loopback
           inet addr:127.0.0.1  Mask:255.0.0.0
@@ -236,7 +237,9 @@ lo        Link encap:Local Loopback
           TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1
           RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+
 openstack@compute1:~$
+
 </pre>
 <pre>
 openstack@compute1:~$ ip link
@@ -260,8 +263,12 @@ openstack@compute1:~$
 เมื่อเช็คเสร็จแล้วให้ ลบ และ ifdown หรือ ifconfig down IP address ของ ens4 ens5 ens6 บนทุกเครื่องออก (เราจะใช้ installation scripts กำหนดค่า หรือกำหนดค่าเองด้วยมือภายหลัง)   
 <p>
  <i>1.2 การเตรียมเครื่องสำหรับติดตั้งบน vbox </i>
-<p> จะเพิ่ม link ไปที่ไฟล์ภายหลัง
-
+<p>
+นศ สามารถอ่านคำอธิบายการเตรียม vbox vm สำหรับติดตั้ง openstack ocata ได้ที่เอกสาร <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/openstack-ocata-vbox-vm-preparation.pdf">documents/openstack-ocata-vbox-vm-preparation.pdf</a> ขอให้สร้าง vm และกำหนดค่าต่างๆตามนั้น หลังจากนั้น ในกรณีที่ นศ จะติดตั้งโดยใช้ scripts ขอให้ copy ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.vbox.install-paramrc.sh">Example.vbox.install-paramrc.sh</a> มาเป็น install-paramrc.sh ใน openstack-ocata-installer directory
+<pre>
+$ cd $HOME/openstack-ocata-installer
+$ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
+</pre>
 <a id="part2"> 
 <h4>ส่วนที่ 2: ติดตั้งด้วย scripts</h4>
 </a>
@@ -279,7 +286,7 @@ config.d   exe-config-installer.sh  LICENSE                README.md
 documents  install-paramrc.sh       OPSInstaller-init.tar
 openstack@controller:~/openstack-ocata-installer$
 </pre>
-ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ install-paramrc.sh ซึ่ง default configuration สำหรับการติดตั้งจะเป็นการติดั้งแบบ 4 nodes และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
+ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่ง default configuration สำหรับการติดตั้งจะเป็นการติดั้งแบบ 4 nodes และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
 <p>
 ต่อ.... soon
 <a id="part2"> 
