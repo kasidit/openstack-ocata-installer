@@ -313,7 +313,7 @@ export OPS_TIMEZONE=Asia\\/Bangkok
 <p>
 
 ...
-และใช้ OpenStack network แบบ Distributed Virtual Router (DVR) และจะกำหนดค่า password ในการติดตั้งแบบ studypass คือเป็น string ง่ายๆ (แทนที่จะเป็นตัวเลข random) เพื่อให้ง่ายต่อการศึกษาและ debug 
+
 <p>
 ต่อ.... soon
 <a id="part2"> 
