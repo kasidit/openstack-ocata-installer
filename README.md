@@ -345,8 +345,59 @@ export NTP_SERVER_LOCAL=10.0.10.126
   <p>
   <img src="documents/architecturevariables.png"> <br>
    ภาพที่ 2 <br>
-...
-
+จากภาพ ตัวแปรต่อไปนี้ใช้กำหนดค่าของ management network 
+<pre>
+export MANAGEMENT_NETWORK_NETMASK=255.255.255.0
+export MANAGEMENT_NETWORK=10.0.10.0
+export MANAGEMENT_BROADCAST_ADDRESS=10.0.10.255 
+export DNS_IP=8.8.8.8
+</pre>
+ถัดจากนั้นเป็นตัวแปร GATEWAY_IP_NIC ซึ่งจะใช้สำหรับการติดตั้งด้วย vbox (ซึ่งจะใช้ controller เป็น virtual gateway) เท่านั้น ดังนั้นเราจะข้ามไป 
+<p>
+ตัวแปร CONTROLLER_IP และ CONTROLLER_IP_NIC ใช้ระบุค่า IP address และ NIC แรกของเครื่อง controller และตัวแปร GATEWAY_IP ใช้ระบุค่า IP address ของ gateway router ของ management network ซึ่งในที่นี้จะหมายถึง IP address ของ gateway router ของ external network ด้วย เพราะเราจะใช้ management network เป็น external network ในการติดตั้งของเรา
+<pre>
+export CONTROLLER_IP=10.0.10.11
+export CONTROLLER_IP_NIC=ens3
+#
+export GATEWAY_IP=10.0.10.1
+</pre>
+<p>
+ต่อไปเป็นการกำหนดค่า IP address ของ network node (ตัวแปร NETWORK_IP) และค่า NIC ของ network node ที่เชื่อมกับ management network (NETWORK_NODE_IP_NIC) ถัดจากนั้นจะเป็นการกำหนดค่าตัวแปรสำหรับ NIC ที่เชื่อมต่อ Data tunnel network ของ network node ได้แก่ DATA_TUNNEL_NETWORK_NODE_IP และ DATA_TUNNEL_NETWORK_NODE_IP_NIC และ DATA_TUNNEL_NETWORK_ADDRESS และ DATA_TUNNEL_NETWORK_NETMASK 
+<pre>
+export NETWORK_IP=10.0.10.21
+export NETWORK_IP_NIC=ens3
+#
+export DATA_TUNNEL_NETWORK_NODE_IP=10.0.11.21
+export DATA_TUNNEL_NETWORK_NODE_IP_NIC=ens4
+export DATA_TUNNEL_NETWORK_ADDRESS=10.0.11.0
+export DATA_TUNNEL_NETWORK_NETMASK=255.255.255.0
+</pre>
+นอกจากเชื่อมต่อกับ management และ data tunnel network แล้ว network node ยังต่อกับ Vlan network และ External network ด้วยซึ่ง นศ จะกำหนดค่าของทั้งสอง network ดังนี้
+<pre>
+export VLAN_NETWORK_NODE_IP_NIC=ens5
+#
+export EXTERNAL_CIDR=10.0.10.0\\/24
+export EXTERNAL_CIDR_NIC=ens6
+#
+export START_FLOATING_IP=10.0.10.100
+export END_FLOATING_IP=10.0.10.200
+</pre>
+จะเห็นได้ว่า การกำหนดค่าของ vlan network นั้นไม่ต้องทำอะไรมาก แค่กำหนดค่าตัวแปร VLAN_NETWORK_NODE_IP_NIC เพื่อระบุว่า NIC ไหนบน network node เชื่อมต่อกับ Vlan network (openstack จะมี CLI ให้ผู้ใช้ๆกำหนดค่าของ vlan network ได้หลังจากการติดตั้ง) ส่วนตัวแปร EXTERNAL_CIDR_NIC คือการบอก OpenStack ว่า NIC ไหนบน network node ที่จะใช้ติดต่อกับ network ภายนอก openstack เนื่องจากเรากำหนดว่าเครื่อง compute และ compute1 จะมี NIC ต่อกับ External network ด้วย (เนื่องจากความขี้เกียจ) ผมจะใช้ค่าของตัวแปร EXTERNAL_CIDR_NIC กับ compute และ compute1 node ด้วยเลย  
+<p>
+ใน script ที่เราจะใช้ต่อไปจะเรียก CLI ของ openstack ให้สร้าง external network หรือเรียกอีกอย่างว่า provider network ให้ แต่ นศ จะต้องระบุ external network CIDR (ตัวแปร EXTERNAL_CIDR) และค่า IP address เริ่มต้น (START_FLOATING_IP) และค่า IP address (END_FLOATING_IP) สุดท้ายที่จะกำหนดให้เป็น Floatin IP ของ provider network  
+<p>
+ในอันดับถัดไป เป็นการระบุค่าตัวแปร COMPUTE_NODE_IP เพื่อกำหนดค่า IP address บน management network ของ compute node และกำหนดค่า COMPUTE_NODE_IP_NIC เพื่อกำหนดว่า NIC ไหนของ compute node ที่ใช้ต่อกับ management network ตัวแปร DATA_TUNNEL_COMPUTE_NODE_IP และ DATA_TUNNEL_COMPUTE_NODE_IP_NIC ใช้กำหนดค่า IP address และ NIC ที่เชื่อมต่อกับ data tunnel network ส่วน VLAN_COMPUTE_NODE_IP_NIC ใช้ระบุค่า NIC ที่เชื่อมต่อกับ Vlan network
+<pre>
+export COMPUTE_IP=10.0.10.31
+export COMPUTE_IP_NIC=ens3
+export DATA_TUNNEL_COMPUTE_NODE_IP=10.0.11.31
+export DATA_TUNNEL_COMPUTE_NODE_IP_NIC=ens4
+export VLAN_COMPUTE_NODE_IP_NIC=ens5
+</pre>
+ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น
+<p>
+<i><a id="paramrc">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
+<p>
 <p>
 ต่อ.... soon
 <a id="part2"> 
