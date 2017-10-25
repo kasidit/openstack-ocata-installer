@@ -340,7 +340,11 @@ export NTP_SERVER3=3.th.pool.ntp.org
 # Deprecate
 export NTP_SERVER_LOCAL=10.0.10.126 
 </pre>
-
+<p>
+อันดับถัดไปจะเป็นการกำหนดค่า network configuration ซึ่งไม่ไช่เรื่องใหม่อะไร แต่ นศ ควรทราบความหมายของตัวแปรเหล่านี้ ในกรณีที่ นศ จะติดตั้งด้วย script และต้องการกำหนดค่าที่แตกต่างจากที่ระบมในส่วนที่ 1 ค่าตัวแปรต่างๆนั้นขอให้นำค่าในภาพที่ 1 มาเทียบกับตัวแปรในภาพที่ 2 
+  <p>
+  <img src="documents/architecturevariables.png"> <br>
+   ภาพที่ 2 <br>
 ...
 
 <p>
