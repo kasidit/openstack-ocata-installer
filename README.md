@@ -384,7 +384,7 @@ export END_FLOATING_IP=10.0.10.200
 </pre>
 จะเห็นได้ว่า การกำหนดค่าของ vlan network นั้นไม่ต้องทำอะไรมาก แค่กำหนดค่าตัวแปร VLAN_NETWORK_NODE_IP_NIC เพื่อระบุว่า NIC ไหนบน network node เชื่อมต่อกับ Vlan network (openstack จะมี CLI ให้ผู้ใช้ๆกำหนดค่าของ vlan network ได้หลังจากการติดตั้ง) ส่วนตัวแปร EXTERNAL_CIDR_NIC คือการบอก OpenStack ว่า NIC ไหนบน network node ที่จะใช้ติดต่อกับ network ภายนอก openstack เนื่องจากเรากำหนดว่าเครื่อง compute และ compute1 จะมี NIC ต่อกับ External network ด้วย (เนื่องจากความขี้เกียจ) ผมจะใช้ค่าของตัวแปร EXTERNAL_CIDR_NIC กับ compute และ compute1 node ด้วยเลย  
 <p>
-ใน script ที่เราจะใช้ต่อไปจะเรียก CLI ของ openstack ให้สร้าง external network หรือเรียกอีกอย่างว่า provider network ให้ แต่ นศ จะต้องระบุ external network CIDR (ตัวแปร EXTERNAL_CIDR) และค่า IP address เริ่มต้น (START_FLOATING_IP) และค่า IP address (END_FLOATING_IP) สุดท้ายที่จะกำหนดให้เป็น Floatin IP ของ provider network  
+ถัดจากนั้น นศ จะต้องระบุ external network CIDR (ด้วยตัวแปร EXTERNAL_CIDR) ค่า IP address เริ่มต้น (ตัวแปร START_FLOATING_IP) และค่า IP address (ตัวแปร END_FLOATING_IP) สุดท้ายที่จะกำหนดให้เป็น Floatin IP ที่จะใช้หลังจากการติดตั้ง  
 <p>
 ในอันดับถัดไป เป็นการระบุค่าตัวแปร COMPUTE_NODE_IP เพื่อกำหนดค่า IP address บน management network ของ compute node และกำหนดค่า COMPUTE_NODE_IP_NIC เพื่อกำหนดว่า NIC ไหนของ compute node ที่ใช้ต่อกับ management network ตัวแปร DATA_TUNNEL_COMPUTE_NODE_IP และ DATA_TUNNEL_COMPUTE_NODE_IP_NIC ใช้กำหนดค่า IP address และ NIC ที่เชื่อมต่อกับ data tunnel network ส่วน VLAN_COMPUTE_NODE_IP_NIC ใช้ระบุค่า NIC ที่เชื่อมต่อกับ Vlan network
 <pre>
