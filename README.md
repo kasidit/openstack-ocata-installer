@@ -394,8 +394,9 @@ export DATA_TUNNEL_COMPUTE_NODE_IP=10.0.11.31
 export DATA_TUNNEL_COMPUTE_NODE_IP_NIC=ens4
 export VLAN_COMPUTE_NODE_IP_NIC=ens5
 </pre>
-ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น <br>
+ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น 
 <p>
+<p> <br>
 <i><a id="paramrc">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
 <p>
 <p>
