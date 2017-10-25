@@ -311,6 +311,35 @@ export OPS_TIMEZONE=Asia\\/Bangkok
 </pre>
 ตัวแปร OPS_LOGIN_NAME และ OPS_LOGIN_PASS ในที่นี้เรากำหนดให้เป็น "openstack" ทั้งคู่ ค่า OPS_LOGIN_NAME และ OPS_LOGIN_PASS นี้ต้องตรงกับชื่อ login name และค่า password ของ Linux account ที่ นศ จะใช้ติดตั้ง OpenStack บนทุก node ส่วน OPS_TIMEZONE นั้นใช้กำหนดค่ว TIMEZONE ซึ่งในทีนี้คือ Asia/Bangkok
 <p>
+อันดับถัดไปคือการกำหนดค่า root password ของ mysql ซึ่ง นศ ต้องจำด้วยว่ากำหนดค่าตัวแปรนี้ว่าอะไร เพราะในระหว่างการติดตั้ง นศ ต้องป้อนค่านี้ด้วยตนเองอีกครั้งหนึ่ง สำหนับ DEMO_PASS และ ADMIN_PASS คือค่า password ของ "demo" user และ "admin" user หลังจากเสร็จสิ้นการติดตั้ง OpenStack 
+<pre>
+export OPS_MYSQL_PASS=mysqlpassword
+export DEMO_PASS=demopassword
+export ADMIN_PASS=adminpassword
+#
+export HYPERVISOR=qemu
+</pre>
+ถัดจจากนั้นจะเป็นการกำหนดค่า HYPERVISOR ให้เป็น "qemu" ในกรณีที่ นศ ติดตั้งบนเครื่องจริง ให้เปลี่ยนค่าของตัวแปรนี้เป็น "kvm" แทน สำหรับตัวแปรถัดไปต่อไปนี้ นศ ไม่ต้องไปยุ่งกับมันก็ได้ มันเป็นการกำหนดค่า url ของ cirros OS image ที่ script จะไป download มา และเป็ฯการกำหนดค่า apt repository และ NTP server ซึ่งถ้าติดตั้งในเมืองไทยคงไม่ต้องเปลี่ยนอะไร
+<pre>
+export INIT_IMAGE_LOCATION=http:\\/\\/download.cirros-cloud.net\\/0.3.5\\/cirros-0.3.5-x86_64-disk.img
+export INIT_IMAGE_NAME=cirros
+#
+export DOMAINNAME=cs.tu.ac.th
+#
+# Ubuntu Repository Parameters
+#
+export LOCAL_REPO=th.archive.ubuntu.com
+export LOCAL_SECURITY_REPO=security.ubuntu.com
+#
+# ntp servers
+export NTP_SERVER0=0.th.pool.ntp.org
+export NTP_SERVER1=1.th.pool.ntp.org
+export NTP_SERVER2=2.th.pool.ntp.org
+export NTP_SERVER3=3.th.pool.ntp.org
+#
+# Deprecate
+export NTP_SERVER_LOCAL=10.0.10.126 
+</pre>
 
 ...
 
