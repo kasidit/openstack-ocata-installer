@@ -422,11 +422,20 @@ $ ./exe-config-installer.sh
 <pre>
 $ cd OPSInstaller/installer
 </pre>
+ในกรณีที่ นศ ติดตั้งบน vbox นศ จะต้อง script ข้างล่างนี้เพื่อทำให้เครื่อง controller เป็น virtual gateway สำหรับ management network ถ้าไม่ไดใช้ vbox ให้ข้ามไปรัน script ถัดไปเลย
+<pre>
+./OS-installer-00-0-set-gateway.sh 
+</pre>
 ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password 
 <pre>
-$ ./OS-installer-00-1-set-remote-access.sh
+./OS-installer-00-1-set-remote-access.sh
 </pre>
-
+script ที่สองจะ update ubuntu 16.04 บนโหนดต่างๆให้เป็นเวอรชันล่าสุดและกำหนด cloud repository สำหรับ openstack ocata installation
+<pre>
+$ ./OS-installer-00-2-update-ubuntu.sh 
+</pre>
+script จะ remote ssh เข้าไปที่เครื่อง controller network compute และ compute1 และในระหว่างที่ update ubuntu ของแต่ละเครื่อง มันจะถามให้ นศ กด [ENTER] เครื่องละครั้ง หลังจาก update ubuntu บนแต่ละเครื่องเสร็จมันจะ reboot เครื่องเหล่านั้น โดยจะ reboot เครื่อง controller หลังสุด
+<p><p>
 ต่อ.... soon
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
