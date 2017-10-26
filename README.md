@@ -411,6 +411,22 @@ export VLAN_COMPUTE_NODE_IP_NIC=ens5
 <i><a id="paramrc">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
 <p>
 <p>
+เริ่มต้นการติดตั้งด้วยคำสั่งต่อไปนี้ (หมายเหตุ นศ ต้องออกคำสั่งใน user mode คือเป็น openstack user ห้ามใช้ sudo จนจบ script เหล่านี้)
+<pre>
+$ cd $HOME/openstack-ocata-installer
+$ ./exe-config-installer.sh
+</pre>
+คำสั่ง ./exe-config-installer.sh จะนำค่าที่กำหนดใน install-paramrc.sh ไปแทนค่า template ของ scripts สำหรับติดตั้ง openstack ในไฟล์ OPSInstaller-init.tar และสร้าง directory ใหม่ชือ OPSInstaller ขึ้น
+<p><p>
+ให้ นศ cd เข้า directory ดังกล่าวดังนี้ 
+<pre>
+$ cd OPSInstaller/installer
+</pre>
+ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password 
+<pre>
+$ ./OS-installer-00-1-set-remote-access.sh
+</pre>
+
 ต่อ.... soon
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
