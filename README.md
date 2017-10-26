@@ -424,11 +424,11 @@ $ cd OPSInstaller/installer
 </pre>
 ในกรณีที่ นศ ติดตั้งบน vbox นศ จะต้อง script ข้างล่างนี้เพื่อทำให้เครื่อง controller เป็น virtual gateway สำหรับ management network ถ้าไม่ไดใช้ vbox ให้ข้ามไปรัน script ถัดไปเลย
 <pre>
-./OS-installer-00-0-set-gateway.sh 
+$ ./OS-installer-00-0-set-gateway.sh 
 </pre>
 ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password 
 <pre>
-./OS-installer-00-1-set-remote-access.sh
+$ ./OS-installer-00-1-set-remote-access.sh
 </pre>
 script ที่สองจะ update ubuntu 16.04 บนโหนดต่างๆให้เป็นเวอรชันล่าสุดและกำหนด cloud repository สำหรับ openstack ocata installation
 <pre>
