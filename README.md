@@ -243,22 +243,21 @@ openstack@compute1:~$
 <pre>
 openstack@compute1:~$ ifconfig
 ens3      Link encap:Ethernet  HWaddr 00:54:09:25:32:17
-inet addr:10.0.10.32  Bcast:10.0.10.255  Mask:255.255.255.0
-inet6 addr: fe80::254:9ff:fe25:3217/64 Scope:Link
-UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-RX packets:5345 errors:0 dropped:0 overruns:0 frame:0
-TX packets:3117 errors:0 dropped:0 overruns:0 carrier:0
-collisions:0 txqueuelen:1000
-RX bytes:7418954 (7.4 MB)  TX bytes:226152 (226.1 KB)
-
+          inet addr:10.0.10.32  Bcast:10.0.10.255  Mask:255.255.255.0
+          inet6 addr: fe80::254:9ff:fe25:3217/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:16827 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9776 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:24038372 (24.0 MB)  TX bytes:693719 (693.7 KB)
 lo        Link encap:Local Loopback
-inet addr:127.0.0.1  Mask:255.0.0.0
-inet6 addr: ::1/128 Scope:Host
-UP LOOPBACK RUNNING  MTU:65536  Metric:1
-RX packets:160 errors:0 dropped:0 overruns:0 frame:0
-TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
-collisions:0 txqueuelen:1
-RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
 openstack@compute1:~$
 </pre>
 <pre>
