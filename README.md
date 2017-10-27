@@ -18,6 +18,12 @@ Thammasat University.
        <li> <a href="#vboxhost">1.2 การเตรียมเครื่องสำหรับติดตั้งบน vbox vm</a>
       </ul>
  <li> 2. <a href="#part2">ติดตั้งด้วย scripts</a> 
+      <ul>
+       <li> <a href="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a>
+       <li> <a href="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a>
+       <li> <a href="usescript">2.3 ติดตั้ง OpenStack ocata ด้วย scripts </a> 
+       <li> <a href="testhorizon">2.4 ใช้งาน OpenStack Horizon</a>
+      </ul>
  <li> 3. <a href="#part3">ติดตั้งด้วยมือ</a> 
 </ul>
 <p>
@@ -50,7 +56,7 @@ network ที่ใช้ในการติดตั้งได้แก่
   <p>
   <img src="documents/architecturetunnel.png"> <br>
    ภาพที่ 2 <br>
-จากภาพ เราใช้ openvswitch bridge จำลอง management network data tunnel network และ vlan network และใช้ kvm จำลอง openstack nodes ผู้ใช้สามารถเข้าถึง vm ได้สองวิธี วิธีแรกคือการเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server เป็นตัวกลาง (เรา assume ว่าผู้อ่านคุ้นเคยกับ ssh tunneling ดังนั้นจะไม่อธิบาย ณ. ที่นี้) วิธีที่สองคือการใช้ VNC client ซึ่งผมจะสอนใน class เมื่อเรียนเรื่องการใช้งาน KVM 
+จากภาพ สมมุติว่า server มี IP address คือ 10.100.13.13 เราจะใช้ openvswitch bridge จำลอง management network data tunnel network และ vlan network และใช้ kvm จำลอง openstack nodes บนเครื่องนั้น ผู้ใช้สามารถเข้าถึง vm ได้สองวิธี วิธีแรกคือการเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server 10.100.13.13 เป็นตัวกลาง (เรา assume ว่าผู้อ่านคุ้นเคยกับ ssh tunneling ดังนั้นจะไม่อธิบาย ณ. ที่นี้) วิธีที่สองคือการใช้ VNC client ซึ่งผมจะสอนใน class เมื่อเรียนเรื่องการใช้งาน KVM 
 <p><p>
 เพื่อให้การติดตั้งเร็วขึ้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง sed ข้างล่าง บน openstack node ทุกเครื่อง 
 <pre>
@@ -360,10 +366,10 @@ export NTP_SERVER3=3.th.pool.ntp.org
 export NTP_SERVER_LOCAL=10.0.10.126 
 </pre>
 <p>
-อันดับถัดไปจะเป็นการกำหนดค่า network configuration ซึ่งไม่ไช่เรื่องใหม่อะไร แต่ นศ ควรทราบความหมายของตัวแปรเหล่านี้ ในกรณีที่ นศ จะติดตั้งด้วย script และต้องการกำหนดค่าที่แตกต่างจากที่ระบมในส่วนที่ 1 ค่าตัวแปรต่างๆนั้นขอให้นำค่าในภาพที่ 1 มาเทียบกับตัวแปรในภาพที่ 2 
+อันดับถัดไปจะเป็นการกำหนดค่า network configuration ซึ่งไม่ไช่เรื่องใหม่อะไร แต่ นศ ควรทราบความหมายของตัวแปรเหล่านี้ ในกรณีที่ นศ จะติดตั้งด้วย script และต้องการกำหนดค่าที่แตกต่างจากที่ระบมในส่วนที่ 1 ค่าตัวแปรต่างๆนั้นขอให้นำค่าในภาพที่ 1 มาเทียบกับตัวแปรในภาพที่ 3 
   <p>
   <img src="documents/architecturevariables.png"> <br>
-   ภาพที่ 2 <br>
+   ภาพที่ 3 <br>
 จากภาพ ตัวแปรต่อไปนี้ใช้กำหนดค่าของ management network 
 <pre>
 export MANAGEMENT_NETWORK_NETMASK=255.255.255.0
@@ -421,7 +427,7 @@ export VLAN_COMPUTE_NODE_IP_NIC=ens5
 ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น 
 <p>
 <p>
-<i><a id="paramrc">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
+<i><a id="usescript">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
 <p>
 <p>
 เริ่มต้นการติดตั้งด้วยคำสั่งต่อไปนี้ (หมายเหตุ นศ ต้องออกคำสั่งใน user mode คือเป็น openstack user ห้ามใช้ sudo จนจบ script เหล่านี้)
@@ -498,7 +504,7 @@ $ ./OS-installer-10-initial-user-network.sh
 </pre>
 <p>
 <p>
-<i><a id="paramrc">2.4 ใช้งาน OpenStack Horizon</a></i><br>
+<i><a id="testhorizon">2.4 ใช้งาน OpenStack Horizon</a></i><br>
 <p>
 <p>
 ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
