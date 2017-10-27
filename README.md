@@ -483,6 +483,11 @@ $ ./OS-installer-09-set-dvr.sh
 <pre>
 $ ./OS-installer-10-initial-user-network.sh
 </pre>
+<p>
+<p>
+<i><a id="paramrc">2.4 ใช้งาน OpenStack Horizon</a></i><br>
+<p>
+<p>
 หลังจากนั้น ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
 <p><p>
 ในกรณีที่ติดตั้งด้วย KVM นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM 
