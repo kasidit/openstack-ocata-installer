@@ -426,7 +426,7 @@ $ cd OPSInstaller/installer
 <pre>
 $ ./OS-installer-00-0-set-gateway.sh 
 </pre>
-ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password (<b>หมายเหตุ:<b> ในกรณีที่ นศ จะใช้ script ติดตั้งเพื่อใช้งานจริง หลังจากติดตั้งเสร็จเรียบร้อยแล้ว นศ ต้องทำสองอย่างได้แก่ (1) เปลี่ยน password ของ openstack user บนทุกเครื่องและ (2) ลบเนื้อหาของไฟล์ $HOME/.ssh/id_rsa และไฟล์ $HOME/.ssh/authorized_keys ใน openstack user บนทุกเครื่อง)
+ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password (<b>หมายเหตุ:</b> ในกรณีที่ นศ จะใช้ script ติดตั้งเพื่อใช้งานจริง หลังจากติดตั้งเสร็จเรียบร้อยแล้ว นศ ต้องทำสองอย่างได้แก่ (1) เปลี่ยน password ของ openstack user บนทุกเครื่องและ (2) ลบเนื้อหาของไฟล์ $HOME/.ssh/id_rsa และไฟล์ $HOME/.ssh/authorized_keys ใน openstack user บนทุกเครื่อง)
 <pre>
 $ ./OS-installer-00-1-set-remote-access.sh
 </pre>
