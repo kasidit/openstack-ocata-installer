@@ -46,15 +46,15 @@ network ที่ใช้ในการติดตั้งได้แก่
 จากภาพที่ 1 สมมุตว่า NIC ที่ 1 คือ ens3 NIC ที่ 2 คือ ens4 NIC ที่ 3 คือ ens5 NIC ที่ 4 คือ ens6 จะเห็นว่าเครื่อง conroller มี ens3 อันเดียว เครื่อง network compute แบะ compute1 ทั้งหมด มี ens3 ถึง ens6 
 <p><p>
  <b>สำหรับวิชา คพ. 449:</b> 
-<p>
 เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab   
 <p><p>
-ต่อจากนั้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
+ให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
  <pre>
  $ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
  </pre>
- และให้ นศ กำหนด network configuration ดังตัวอย่างข้างล่าง ซึ่งเป็นการกำหนดค่า IP address ของทุกเครื่งอบน management network โดยที่ทุก interface มี MTU คือ 1500 
+ให้กำหนด network configuration ของทุกเครื่องบน management network ดังตัวอย่างข้างล่าง เรา ASSUME ว่าทุก interface มี MTU คือ 1500 
 <p>
+ <p>
  <b>เครื่อง controller </b> 
 <pre>
 openstack@controller:~$ cat /etc/network/interfaces
@@ -101,7 +101,7 @@ openstack@controller:~$ ip link
     link/ether 00:54:09:25:20:17 brd ff:ff:ff:ff:ff:ff
 openstack@controller:~$
 </pre>
-<p>
+<p><p>
  <b>เครื่อง network </b>
 <pre>
 openstack@network:~$ cat /etc/network/interfaces
@@ -156,7 +156,7 @@ openstack@network:~$ ip link
     link/ether 00:54:09:25:21:16 brd ff:ff:ff:ff:ff:ff
 openstack@network:~$
 </pre>
-<p>
+<p><p>
  <b>เครื่อง compute </b>
 <pre>
 openstack@compute:~$ cat /etc/network/interfaces
@@ -208,7 +208,7 @@ openstack@compute:~$ ip link
     link/ether 00:54:09:25:31:16 brd ff:ff:ff:ff:ff:ff
 openstack@compute:~$
 </pre>
-<p>
+<p><p>
  <b>เครื่อง compute1 </b>
 <pre>
 openstack@compute1:~$ cat /etc/network/interfaces
