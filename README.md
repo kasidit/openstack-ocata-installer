@@ -492,7 +492,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <i><a id="paramrc">2.4 ใช้งาน OpenStack Horizon</a></i><br>
 <p>
 <p>
-หลังจากนั้น ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
+ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
 <p><p>
 <b>สำหรับวิชา คพ. 449:</b>
 ในกรณีที่ติดตั้งด้วย KVM นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
