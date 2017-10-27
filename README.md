@@ -45,7 +45,9 @@ network ที่ใช้ในการติดตั้งได้แก่
  </ul>
 จากภาพที่ 1 สมมุตว่า NIC ที่ 1 คือ ens3 NIC ที่ 2 คือ ens4 NIC ที่ 3 คือ ens5 NIC ที่ 4 คือ ens6 จะเห็นว่าเครื่อง conroller มี ens3 อันเดียว เครื่อง network compute แบะ compute1 ทั้งหมด มี ens3 ถึง ens6 
 <p><p>
- <b>สำหรับวิชา คพ. 449:</b> เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab นศ จะใช้เครื่อง vm เหล่านี้ในการติดตั้ง   
+ <b>สำหรับวิชา คพ. 449:</b> 
+<p>
+เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab   
 <p><p>
 ต่อจากนั้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
  <pre>
@@ -492,9 +494,8 @@ $ ./OS-installer-10-initial-user-network.sh
 <p>
 หลังจากนั้น ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
 <p><p>
-ในกรณีที่ติดตั้งด้วย KVM นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM 
-<p><p>
-หลังจาก login ด้วย putty เข้าสู่เครื่องนั้นแล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
+<b>สำหรับวิชา คพ. 449:</b>
+ในกรณีที่ติดตั้งด้วย KVM นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
 <p>
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
