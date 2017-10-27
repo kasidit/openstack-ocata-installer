@@ -19,10 +19,10 @@ Thammasat University.
       </ul>
  <li> 2. <a href="#part2">ติดตั้งด้วย scripts</a> 
       <ul>
-       <li> <a href="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a>
-       <li> <a href="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a>
-       <li> <a href="usescript">2.3 ติดตั้ง OpenStack ocata ด้วย scripts </a> 
-       <li> <a href="testhorizon">2.4 ใช้งาน OpenStack Horizon</a>
+       <li> <a href="#downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a>
+       <li> <a href="#paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a>
+       <li> <a href="#usescript">2.3 ติดตั้ง OpenStack ocata ด้วย scripts </a> 
+       <li> <a href="#testhorizon">2.4 ใช้งาน OpenStack Horizon</a>
       </ul>
  <li> 3. <a href="#part3">ติดตั้งด้วยมือ</a> 
 </ul>
