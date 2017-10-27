@@ -422,7 +422,7 @@ $ ./exe-config-installer.sh
 <pre>
 $ cd OPSInstaller/installer
 </pre>
-ในกรณีที่ นศ ติดตั้งบน vbox นศ จะต้อง script ข้างล่างนี้เพื่อทำให้เครื่อง controller เป็น virtual gateway สำหรับ management network ถ้าไม่ไดใช้ vbox ให้ข้ามไปรัน script ถัดไปเลย
+ ในกรณีที่ นศ ติดตั้งบน vbox นศ จะต้อง script OS-installer-00-0-set-gateway.sh ข้างล่างนี้เพื่อทำให้เครื่อง controller เป็น virtual gateway สำหรับ management network <b>ถ้าไม่ได้ใช้ vbox ให้ข้ามไปรัน script ถัดไปเลย</b>
 <pre>
 $ ./OS-installer-00-0-set-gateway.sh 
 </pre>
