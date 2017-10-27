@@ -35,9 +35,7 @@ Thammasat University.
 กำหนดให้ทุกเครื่องมี username คือ opensatck และ password คือ openstack และเพื่อความสะดวกแนะนำว่าให้ทำให้ทุกเครื่องใช้ sudo โดยไม่ต้องป้อน password อีกอย่างที่สำคัญคือเครื่องเหล่านี้ควรมีเวลาใกล้เคียงกัน
 <p><p>
 สำหรับเนต (network) ที่จะใช้ในการติดตั้ง เรา <b>ASSUME</b> ว่ามี  management network รวมทั้ง network gateway ที่ใช้งานได้แอยู่เรียบร้อยแล้ว และมี data tunnel network และ vlan network ที่พร้อมจะใช้เชื่อมต่อกับเครื่องที่จะติดตั้งเรียบร้อยแล้ว 
-<p><p>
- (สำหรับวิชา คพ. 449 ผมได้เตรียม kvm vm 4 เครื่องที่เชื่อมต่อกับ openvswitch network bridges ไว้ให้เรียบร้อยแล้วบนเครื่อง server ใน lab นศ สามารถใช้เครื่อง vm เหล่านี้ในการติดตั้งได้เหมือนใช้เครื่องจริง ในกรณีที่ นศ จะใช้เครื่องจริง นศ ต้องต่อเครื่องเข้ากับ switch และกำหนด subnet หรือ vlan ให้กับ network ต่างๆด้วยตนเอง)  
-<p><p>
+<p><p> 
 network ที่ใช้ในการติดตั้งได้แก่ 
  <ul>
  <li> management network: มี cidr 10.0.10.0/24 และ gateway คือ 10.0.10.1  openstack ใช้เนตนี้เป็นเนตหลักเพื่อออกอินเตอเนตและส่งคำสั่งระหว่างโหนด(หรือเครื่องทั้ง 4)ต่างๆของมัน  
@@ -46,6 +44,8 @@ network ที่ใช้ในการติดตั้งได้แก่
  <li> external network: คือเนตที่เป็น internet service provider ของ openstack ในที่นี้เราจะใช้ management network 
  </ul>
 จากภาพที่ 1 สมมุตว่า NIC ที่ 1 คือ ens3 NIC ที่ 2 คือ ens4 NIC ที่ 3 คือ ens5 NIC ที่ 4 คือ ens6 จะเห็นว่าเครื่อง conroller มี ens3 อันเดียว เครื่อง network compute แบะ compute1 ทั้งหมด มี ens3 ถึง ens6 
+<p><p>
+ <b>สำหรับวิชา คพ. 449:</b> ผมได้เตรียม kvm vm 4 เครื่องที่เชื่อมต่อกับ openvswitch network bridges ไว้ให้เรียบร้อยแล้วบนเครื่อง server ใน lab นศ สามารถใช้เครื่อง vm เหล่านี้ในการติดตั้งได้เหมือนใช้เครื่องจริง   
 <p><p>
  ในขั้นต้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
  <pre>
