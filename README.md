@@ -47,9 +47,9 @@ network ที่ใช้ในการติดตั้งได้แก่
 <p><p>
  <b>สำหรับวิชา คพ. 449:</b> เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab นศ จะใช้เครื่อง vm เหล่านี้ในการติดตั้ง   
 <p><p>
- ในขั้นต้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
+ต่อจากนั้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง 
  <pre>
-  sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
+ $ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
  </pre>
  และให้ นศ กำหนด network configuration ดังตัวอย่างข้างล่าง ซึ่งเป็นการกำหนดค่า IP address ของทุกเครื่งอบน management network โดยที่ทุก interface มี MTU คือ 1500 
 <p>
