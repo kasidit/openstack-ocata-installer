@@ -436,12 +436,61 @@ $ ./OS-installer-00-2-update-ubuntu.sh
 </pre>
 script จะ remote ssh เข้าไปที่เครื่อง controller network compute และ compute1 และในระหว่างที่ update ubuntu ของแต่ละเครื่อง มันจะถามให้ นศ กด [ENTER] เครื่องละครั้ง หลังจาก update ubuntu บนแต่ละเครื่องเสร็จมันจะ reboot เครื่องเหล่านั้น โดยจะ reboot เครื่อง controller หลังสุด
 <p><p>
-ในอันดับถัดไป เราจะเริ่มต้นติดตั้ง component ต่างๆของ openstack 
-ต่อ.... soon
+ในอันดับถัดไป เราจะเริ่มต้นด้วยการกำหนดค่า network configurations ที่จำเป็นสำหรับการติดตั้ง openstack ด้วย OS-installer-01-node-setups.sh ซึ่งจะกำหนดค่าและ ifup interfaces ต่างๆบนทุกๆเครื่องในภาพที่ 1 และติดตั้ง chrony เพื่อ sync เวลาระหว่าง NTP server กับ controller และระหว่าง controller กับทุกๆ node 
+<pre>
+$ ./OS-installer-01-node-setups.sh
+</pre>
+หลังจากนั้น นศ จะติดตั้ง mysql ด้วย script OS-installer-02-mysql.sh 
+<pre>
+$ ./OS-installer-02-mysql.sh
+</pre>
+ขอให้ นศ จำรหัสผ่านสำหรับ root ของ mysql ที่กำหนดไว้ใน install-paramrc.sh ด้วย (ในที่นี้คือ "mysqlpassword") ระหว่างที่รัน script นี้ นศ จะต้องระวังและป้อนค่าตามที่ script ต้องการดังนี้
+<ul>
+<li> หลังจากติดตั้ง mysql แล้ว script จะให้ป้อนค่า root password ซึ่งไม่มีเพราะเป็นการติดตั้งใหม่ ดังนั้น นศ ต้อง กด <b>ENTER</b>
+<li> ถัดจากนั้นมันจะให้ป้อน password สองครั้ง
+<li> คำถามที่เหลือตอบ y ให้หมด 
+</ul>
+<p><p>
+นศ จะติดตั้ง rabbitmq ซึ่งเป็น message queue software ที่ components ของ openstack ใช้สื่อสารกัน
+<pre>
+$ ./OS-installer-03-rabbitmq.sh
+</pre>
+ถัดจากนั้นจะติดตั้ง keystone 
+<pre>
+$ ./OS-installer-04-keystone.sh
+</pre>
+ตามด้วย glance
+<pre>
+$ ./OS-installer-05-glance.sh
+</pre>
+และ nova
+<pre>
+$ ./OS-installer-06-nova.sh
+</pre>
+และ neutron
+<pre>
+$ ./OS-installer-07-neutron.sh
+</pre>
+ติดตั้ง horizon web gui (ถ้าเครื่อง cpu หรือ memory น้อย ผมแนะนำให้ใช้ CLI แทน web interface)
+<pre>
+$ ./OS-installer-08-horizon.sh
+</pre>
+กำหนดค่า network ให้เป็น Distributed Virtual Router (DVR)
+<pre>
+$ ./OS-installer-09-set-dvr.sh
+</pre>
+ใช้ script สร้าง network เริ่มต้นและทดสอบ network
+<pre>
+$ ./OS-installer-10-initial-user-network.sh
+</pre>
+หลังจากนั้น ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ 
+<p><p>
+ในกรณีที่ติดตั้งด้วย KVM นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM บนนั้น หลังจาก login ด้วย putty เข้าสู่เครื่องนั้นแล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
+<p>
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
 </a>
-
+ต่อ.... soon
 
 <b>อ้างอิง</b>
 1. http://docs.openstack.org/
