@@ -294,7 +294,7 @@ openstack@compute1:~$
 <p><p>
 <i><a id="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a></i><br>
 <p>
-นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video นี้ประกอบ</a>)
+นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video</a>)
 <pre>
 $ cd $HOME
 $ git clone https://github.com/kasidit/openstack-ocata-installer
@@ -320,7 +320,7 @@ $ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
 <p>
 ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่งถ้า นศ กำหนดค่า vm และเนตตามที่ระบุใน ส่วนที่ 1.1 และติดตั้งบน kvm (ที่ใช้รหัส ens เป็นชื่อ NIC) นศ ก็สามารถใช้ไฟล์ install-paramrc.sh นี้ได้เลย และในกรณีที่ นศ ใช้ vbox ติดตั้งและกำหนดค่าต่างๆเหมือนที่อธิบายในส่วน 1.2 นศ ก็สามารถใช้ไฟล์ Example.vbox.install-paramrc.sh ได้เลยเช่นกัน (ข้ามไปทำส่วนที่ 2.3 ได้)
 <p><p>
-แต่อย่างไรก็ตาม หาก นศ ติดตั้งบนเครื่องจริง ชื่อ NICs และค่าอื่นๆก็อาจเปลี่ยนไป ดังนั้นผมจะอธิบายความหมายของตัวแปรต่างๆในไฟล์ install-paramrc.sh เพื่อที่จะได้กำหนดค่าอย่างถูกต้อง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video นี้ประกอบ</a>) อันดับแรก environment variables สามอันแรกในไฟล์นั้นได้แก่
+แต่อย่างไรก็ตาม หาก นศ ติดตั้งบนเครื่องจริง ชื่อ NICs และค่าอื่นๆก็อาจเปลี่ยนไป ดังนั้นผมจะอธิบายความหมายของตัวแปรต่างๆในไฟล์ install-paramrc.sh เพื่อที่จะได้กำหนดค่าอย่างถูกต้อง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video</a>) อันดับแรก environment variables สามอันแรกในไฟล์นั้นได้แก่
 <pre>
 export INSTALL_TYPE=full
 export NETWORK_TYPE=dvr_ovs
@@ -433,7 +433,7 @@ export VLAN_COMPUTE_NODE_IP_NIC=ens5
 $ cd $HOME/openstack-ocata-installer
 $ ./exe-config-installer.sh
 </pre>
-คำสั่ง ./exe-config-installer.sh จะนำค่าที่กำหนดใน install-paramrc.sh ไปแทนค่า template ของ scripts สำหรับติดตั้ง openstack ในไฟล์ OPSInstaller-init.tar และสร้าง directory ใหม่ชือ OPSInstaller ขึ้น (ดู <a href="https://www.youtube.com/watch?v=zIVLVEvaDgs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=4">youtube video นี้ประกอบ</a>)
+คำสั่ง ./exe-config-installer.sh จะนำค่าที่กำหนดใน install-paramrc.sh ไปแทนค่า template ของ scripts สำหรับติดตั้ง openstack ในไฟล์ OPSInstaller-init.tar และสร้าง directory ใหม่ชือ OPSInstaller ขึ้น (ดู <a href="https://www.youtube.com/watch?v=zIVLVEvaDgs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=4">youtube video</a>)
 <p><p>
 ให้ นศ cd เข้า directory ดังกล่าวดังนี้ 
 <pre>
@@ -443,7 +443,7 @@ $ cd OPSInstaller/installer
 <pre>
 $ ./OS-installer-00-0-set-gateway.sh 
 </pre>
-ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password (<b>หมายเหตุ:</b> ในกรณีที่ นศ จะใช้ script ติดตั้งเพื่อใช้งานจริง หลังจากติดตั้งเสร็จเรียบร้อยแล้ว นศ ต้องทำสองอย่างได้แก่ (1) เปลี่ยน password ของ openstack user บนทุกเครื่องและ (2) ลบเนื้อหาของไฟล์ $HOME/.ssh/id_rsa และไฟล์ $HOME/.ssh/authorized_keys ใน openstack user บนทุกเครื่อง) (ดู <a href="https://www.youtube.com/watch?v=zIVLVEvaDgs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=4">youtube video นี้ประกอบ</a>)
+ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password (<b>หมายเหตุ:</b> ในกรณีที่ นศ จะใช้ script ติดตั้งเพื่อใช้งานจริง หลังจากติดตั้งเสร็จเรียบร้อยแล้ว นศ ต้องทำสองอย่างได้แก่ (1) เปลี่ยน password ของ openstack user บนทุกเครื่องและ (2) ลบเนื้อหาของไฟล์ $HOME/.ssh/id_rsa และไฟล์ $HOME/.ssh/authorized_keys ใน openstack user บนทุกเครื่อง) (ดู <a href="https://www.youtube.com/watch?v=zIVLVEvaDgs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=4">youtube video</a>)
 <pre>
 $ ./OS-installer-00-1-set-remote-access.sh
 </pre>
@@ -453,11 +453,11 @@ $ ./OS-installer-00-2-update-ubuntu.sh
 </pre>
 script จะ remote ssh เข้าไปที่เครื่อง controller network compute และ compute1 และในระหว่างที่ update ubuntu ของแต่ละเครื่อง มันจะถามให้ นศ กด [ENTER] เครื่องละครั้ง หลังจาก update ubuntu บนแต่ละเครื่องเสร็จมันจะ reboot เครื่องเหล่านั้น โดยจะ reboot เครื่อง controller หลังสุด
 <p><p>
-ในอันดับถัดไป เราจะเริ่มต้นด้วยการกำหนดค่า network configurations ที่จำเป็นสำหรับการติดตั้ง openstack ด้วย OS-installer-01-node-setups.sh ซึ่งจะกำหนดค่าและ ifup interfaces ต่างๆบนทุกๆเครื่องในภาพที่ 1 และติดตั้ง chrony เพื่อ sync เวลาระหว่าง NTP server กับ controller และระหว่าง controller กับทุกๆ node (ดู <a href="https://www.youtube.com/watch?v=ii7Ty4cW6mQ&index=5&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video นี้ประกอบ</a>)
+ในอันดับถัดไป เราจะเริ่มต้นด้วยการกำหนดค่า network configurations ที่จำเป็นสำหรับการติดตั้ง openstack ด้วย OS-installer-01-node-setups.sh ซึ่งจะกำหนดค่าและ ifup interfaces ต่างๆบนทุกๆเครื่องในภาพที่ 1 และติดตั้ง chrony เพื่อ sync เวลาระหว่าง NTP server กับ controller และระหว่าง controller กับทุกๆ node (ดู <a href="https://www.youtube.com/watch?v=ii7Ty4cW6mQ&index=5&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
 <pre>
 $ ./OS-installer-01-node-setups.sh
 </pre>
-หลังจากนั้น นศ จะติดตั้ง mysql ด้วย script OS-installer-02-mysql.sh (ดู <a href="https://www.youtube.com/watch?v=pYuxnxX_WZw&index=6&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video นี้ประกอบ</a>)
+หลังจากนั้น นศ จะติดตั้ง mysql ด้วย script OS-installer-02-mysql.sh (ดู <a href="https://www.youtube.com/watch?v=pYuxnxX_WZw&index=6&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
 <pre>
 $ ./OS-installer-02-mysql.sh
 </pre>
@@ -480,11 +480,11 @@ $ ./OS-installer-04-keystone.sh
 <pre>
 $ ./OS-installer-05-glance.sh
 </pre>
-และ nova (ดู <a href="https://www.youtube.com/watch?v=dRQ9GPtPCZs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=7">youtube video นี้ประกอบ</a>)
+และ nova (ดู <a href="https://www.youtube.com/watch?v=dRQ9GPtPCZs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=7">youtube video</a>)
 <pre>
 $ ./OS-installer-06-nova.sh
 </pre>
-และ neutron (ดู <a href="https://www.youtube.com/watch?v=5gC8dntxaE8&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=8">youtube video นี้ประกอบ</a>)
+และ neutron (ดู <a href="https://www.youtube.com/watch?v=5gC8dntxaE8&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=8">youtube video</a>)
 <pre>
 $ ./OS-installer-07-neutron.sh
 </pre>
@@ -492,7 +492,7 @@ $ ./OS-installer-07-neutron.sh
 <pre>
 $ ./OS-installer-08-horizon.sh
 </pre>
-กำหนดค่า network ให้เป็น Distributed Virtual Router (DVR) (ดู <a href="https://www.youtube.com/watch?v=A-NkW1xYylY&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=9">youtube video นี้ประกอบ</a>)
+กำหนดค่า network ให้เป็น Distributed Virtual Router (DVR) (ดู <a href="https://www.youtube.com/watch?v=A-NkW1xYylY&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=9">youtube video</a>)
 <pre>
 $ ./OS-installer-09-set-dvr.sh
 </pre>
@@ -505,7 +505,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <i><a id="testhorizon">2.4 ใช้งาน OpenStack Horizon</a></i><br>
 <p>
 <p>
-ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video นี้ประกอบ</a>)
+ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
 <p><p>
 <b>สำหรับวิชา คพ. 449:</b>
 เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
