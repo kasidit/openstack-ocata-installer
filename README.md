@@ -426,7 +426,7 @@ $ cd OPSInstaller/installer
 <pre>
 $ ./OS-installer-00-0-set-gateway.sh 
 </pre>
-ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password 
+ถัดจากนั้นรัน script แรกเพื่อทำให้สามารถ remote ssh จาก controller ไปยังเครื่องอื่นๆได้โดยไม่ต้องใส่ password (<b>หมายเหตุ:<b> ในกรณีที่ นศ จะใช้ script ติดตั้งเพื่อใช้งานจริง หลังจากติดตั้งเสร็จเรียบร้อยแล้ว นศ ต้องทำสองอย่างได้แก่ (1) เปลี่ยน password ของ openstack user บนทุกเครื่องและ (2) ลบเนื้อหาของไฟล์ $HOME/.ssh/id_rsa และไฟล์ $HOME/.ssh/authorized_keys ใน openstack user บนทุกเครื่อง)
 <pre>
 $ ./OS-installer-00-1-set-remote-access.sh
 </pre>
@@ -436,6 +436,7 @@ $ ./OS-installer-00-2-update-ubuntu.sh
 </pre>
 script จะ remote ssh เข้าไปที่เครื่อง controller network compute และ compute1 และในระหว่างที่ update ubuntu ของแต่ละเครื่อง มันจะถามให้ นศ กด [ENTER] เครื่องละครั้ง หลังจาก update ubuntu บนแต่ละเครื่องเสร็จมันจะ reboot เครื่องเหล่านั้น โดยจะ reboot เครื่อง controller หลังสุด
 <p><p>
+ในอันดับถัดไป เราจะเริ่มต้นติดตั้ง component ต่างๆของ openstack 
 ต่อ.... soon
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
@@ -443,6 +444,4 @@ script จะ remote ssh เข้าไปที่เครื่อง contro
 
 
 <b>อ้างอิง</b>
-1. http://sciencecloud-community.cs.tu.ac.th/ 
-2. http://vasabilab.cs.tu.ac.th/ 
-3. http://docs.openstack.org/
+1. http://docs.openstack.org/
