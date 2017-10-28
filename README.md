@@ -529,7 +529,7 @@ $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
-คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+ถ้า update /etc/apt/sources.list ให้ชี้ไปที่ th.archive.ubuntu.com แล้วก็ไม่จำเป็นต้องรัน copy ไฟล์ files/local-sources.list ก้ได้ และคำสั่ง add-apt-repository จะรอให้ นศ กด [ENTER] 
 <p>
 <pre>
 $ sudo apt-get update 
@@ -599,6 +599,11 @@ $ sudo apt-get -y dist-upgrade
 $ sudo apt-get -y install python-openstackclient
 $ sudo reboot
 </pre>
+<p><p>
+<i><a id="ubunupdate">3.1 update ubuntu บน ทุก node </a></i><br>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p
 <p>
 ต่อ.... soon
 
