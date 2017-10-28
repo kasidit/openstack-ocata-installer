@@ -513,10 +513,10 @@ $ ./OS-installer-10-initial-user-network.sh
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
 </a>
+<p><p>สำหรับการติดตั้งด้วยมือนั้น ผมจะอ้างอิงถึงไฟล์ที่อยู่ใน sub directory "files" ซึ่งจะ assume ว่า นศ จะต้องสร้างขึ้น ในกรณีที่ไฟล์ใน sub directory "files" มีขนาดใหญ่หรือ มี comment มากเกินไป ผมจะใส่ไฟล์เพิ่มเติมที่ลบ comment เหล่านั้นออกเพื่อให้ นศ เห็นว่ามีการกำหนดค่าอะไรในการติดตั้ง 
 <p><p>
 <i><a id="ubunupdate">3.1 update ubuntu บน ทุก node </a></i><br>
 <p><p>
-สำหรับการติดตั้งด้วยมือนั้น ผมจะอ้างอิงถึงไฟล์ที่อยู่ใน sub directory "files" ซึ่งจะ assume ว่า นศ จะต้องสร้างขึ้น ในกรณีที่ไฟล์ใน sub directory "files" มีขนาดใหญ่หรือ มี comment มากเกินไป ผมจะใส่ไฟล์เพิ่มเติมที่ลบ comment เหล่านั้นออกเพื่อให้ นศ เห็นว่ามีการกำหนดค่าอะไรในการติดตั้ง 
 <b>เครื่อง controller</b>
 <p><p>
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
@@ -530,6 +530,7 @@ $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
 คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<p>
 <pre>
 $ sudo apt-get update 
 $ sudo apt-get -y dist-upgrade
@@ -550,6 +551,7 @@ $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
 คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<p>
 <pre>
 $ sudo apt-get update 
 $ sudo apt-get -y dist-upgrade
@@ -570,6 +572,7 @@ $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
 คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<p>
 <pre>
 $ sudo apt-get update 
 $ sudo apt-get -y dist-upgrade
@@ -590,7 +593,7 @@ $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
 คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
-<pre>
+<p><pre>
 $ sudo apt-get update 
 $ sudo apt-get -y dist-upgrade
 $ sudo apt-get -y install python-openstackclient
