@@ -513,6 +513,30 @@ $ ./OS-installer-10-initial-user-network.sh
 <a id="part2"> 
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
 </a>
+<p><p>
+<i><a id="testhorizon">3.1 update ubuntu บน ทุก node </a></i><br>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+login เข้า user openstack และใช้คำสั่งต่อไปนี้
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/hosts">files/hosts</a> /etc/hosts
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.saved
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local-sources.list">files/local-sources.list</a> /etc/apt/sources.list
+$ 
+$ sudo apt-get update
+$ sudo apt-get -y install software-properties-common
+$ sudo add-apt-repository cloud-archive:ocata
+</pre>
+<p>
+<b>เครื่อง network</b>
+ 
+<p>
+<b>เครื่อง compute</b> 
+
+<p>
+<b>เครื่อง compute1</b> 
+
 ต่อ.... soon
 
 <b>อ้างอิง</b>
