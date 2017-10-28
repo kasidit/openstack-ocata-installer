@@ -516,6 +516,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <p><p>
 <i><a id="testhorizon">3.1 update ubuntu บน ทุก node </a></i><br>
 <p><p>
+สำหรับการติดตั้งด้วยมือนั้น ผมจะอ้างอิงถึงไฟล์ที่อยู่ใน sub directory "files" ซึ่งจะ assume ว่า นศ จะต้องสร้างขึ้น ในกรณีที่ไฟล์ใน sub directory "files" มีขนาดใหญ่หรือ มี comment มากเกินไป ผมจะใส่ไฟล์เพิ่มเติมที่ลบ comment เหล่านั้นออกเพื่อให้ นศ เห็นว่ามีการกำหนดค่าอะไรในการติดตั้ง 
 <b>เครื่อง controller</b>
 <p><p>
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
