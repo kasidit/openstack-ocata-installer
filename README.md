@@ -514,7 +514,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
 </a>
 <p><p>
-<i><a id="testhorizon">3.1 update ubuntu บน ทุก node </a></i><br>
+<i><a id="ubunupdate">3.1 update ubuntu บน ทุก node </a></i><br>
 <p><p>
 สำหรับการติดตั้งด้วยมือนั้น ผมจะอ้างอิงถึงไฟล์ที่อยู่ใน sub directory "files" ซึ่งจะ assume ว่า นศ จะต้องสร้างขึ้น ในกรณีที่ไฟล์ใน sub directory "files" มีขนาดใหญ่หรือ มี comment มากเกินไป ผมจะใส่ไฟล์เพิ่มเติมที่ลบ comment เหล่านั้นออกเพื่อให้ นศ เห็นว่ามีการกำหนดค่าอะไรในการติดตั้ง 
 <b>เครื่อง controller</b>
@@ -529,15 +529,74 @@ $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
-<p>
+คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<pre>
+$ sudo apt-get update 
+$ sudo apt-get -y dist-upgrade
+$ sudo apt-get -y install python-openstackclient
+$ sudo reboot
+</pre>
+<p><p>
 <b>เครื่อง network</b>
- 
-<p>
+<p><p>
+login เข้า user openstack และใช้คำสั่งต่อไปนี้
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/hosts">files/hosts</a> /etc/hosts
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.saved
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/local-sources.list">files/local-sources.list</a> /etc/apt/sources.list
+$ 
+$ sudo apt-get update
+$ sudo apt-get -y install software-properties-common
+$ sudo add-apt-repository cloud-archive:ocata
+</pre>
+คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<pre>
+$ sudo apt-get update 
+$ sudo apt-get -y dist-upgrade
+$ sudo apt-get -y install python-openstackclient
+$ sudo reboot
+</pre>
+<p><p>
 <b>เครื่อง compute</b> 
-
-<p>
+<p><p>
+login เข้า user openstack และใช้คำสั่งต่อไปนี้
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/hosts">files/hosts</a> /etc/hosts
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.saved
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/local-sources.list">files/local-sources.list</a> /etc/apt/sources.list
+$ 
+$ sudo apt-get update
+$ sudo apt-get -y install software-properties-common
+$ sudo add-apt-repository cloud-archive:ocata
+</pre>
+คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<pre>
+$ sudo apt-get update 
+$ sudo apt-get -y dist-upgrade
+$ sudo apt-get -y install python-openstackclient
+$ sudo reboot
+</pre>
+<p><p>
 <b>เครื่อง compute1</b> 
-
+<p><p>
+login เข้า user openstack และใช้คำสั่งต่อไปนี้
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/hosts">files/hosts</a> /etc/hosts
+$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.saved
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/local-sources.list">files/local-sources.list</a> /etc/apt/sources.list
+$ 
+$ sudo apt-get update
+$ sudo apt-get -y install software-properties-common
+$ sudo add-apt-repository cloud-archive:ocata
+</pre>
+คำสั่งสุดท้ายจะรอให้ นศ กด [ENTER] 
+<pre>
+$ sudo apt-get update 
+$ sudo apt-get -y dist-upgrade
+$ sudo apt-get -y install python-openstackclient
+$ sudo reboot
+</pre>
+<p>
 ต่อ.... soon
 
 <b>อ้างอิง</b>
