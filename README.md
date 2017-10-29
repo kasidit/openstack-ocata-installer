@@ -369,10 +369,13 @@ export NTP_SERVER3=3.th.pool.ntp.org
 export NTP_SERVER_LOCAL=10.0.10.126 
 </pre>
 <p>
-อันดับถัดไปจะเป็นการกำหนดค่า network configuration ซึ่งไม่ไช่เรื่องใหม่อะไร แต่ นศ ควรทราบความหมายของตัวแปรเหล่านี้ ในกรณีที่ นศ จะติดตั้งด้วย script และต้องการกำหนดค่าที่แตกต่างจากที่ระบมในส่วนที่ 1 ค่าตัวแปรต่างๆนั้นขอให้นำค่าในภาพที่ 1 มาเทียบกับตัวแปรในภาพที่ 3 
+อันดับถัดไปจะเป็นการกำหนดค่า network configuration ในกรณีที่ นศ จะติดตั้งด้วย script และต้องการกำหนดค่าตัวแปรที่แตกต่างจากที่ระบุในส่วนที่ 1 นศ ควรทราบความหมายของตัวแปรเหล่านี้ 
+<details>
+<summary><b>ภาพที่ 3 แสดงการ mapping ของค่าตัวแปรใน install-paramrc.sh กับค่า network configuration ในภาพที่ 1</b></summary> 
   <p>
   <img src="documents/architecturevariables.png"> <br>
    ภาพที่ 3 <br>
+</details>
 จากภาพ ตัวแปรต่อไปนี้ใช้กำหนดค่าของ management network 
 <pre>
 export MANAGEMENT_NETWORK_NETMASK=255.255.255.0
@@ -609,7 +612,7 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<b>คำถาม PROJECT วิชา คพ. 449:</b> (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร 
+<textarea>คำถาม PROJECT วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </textarea> 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
