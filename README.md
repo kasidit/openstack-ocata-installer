@@ -28,8 +28,7 @@ Thammasat University.
 </ul>
 <p>
 <a id="part1"><h3>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h3></a>
-<p>
- <p>
+<p><p>
  เราจะมีการเตรียมการสองแบบคือ การเตรียมการสำหรับการติดตั้งโดยใช้ kvm vm หรือโดยใช้ virtual box vm (vbox)
 <p>
  <i><a id="kvmhost"><h4>1.1 การเตรียมเครื่องเพื่อติดตั้งบน kvm vm หรือเครื่องจริง</h4></a></i>
@@ -297,9 +296,9 @@ openstack@compute1:~$
 <a id="part2"> 
 <h3>ส่วนที่ 2: ติดตั้งด้วย scripts</h3>
 </a>
-<p><p>
-<i><a id="downloadinstaller"><h4>2.1 ดาวน์โหลด openstack-ocata-installer scripts</h4></a></i><br>
 <p>
+<i><a id="downloadinstaller"><h4>2.1 ดาวน์โหลด openstack-ocata-installer scripts</h4></a></i>
+<p><p>
 นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video</a>)
 <pre>
 $ cd $HOME
@@ -322,7 +321,7 @@ $ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
 <p>
 แต่ถ้าติดตั้งบน kvm หรือเครื่องจริงก็ให้ใช้ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ที่มีอยู่แต่เดิมเป็นตัวอย่าง <br> 
 <p>
-<i><a id="paramrc"><h4>2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </h4></a></i><br>
+<i><a id="paramrc"><h4>2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </h4></a></i>
 <p>
 ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่งถ้า นศ กำหนดค่า vm และเนตตามที่ระบุใน ส่วนที่ 1.1 และติดตั้งบน kvm (ที่ใช้รหัส ens เป็นชื่อ NIC) นศ ก็สามารถใช้ไฟล์ install-paramrc.sh นี้ได้เลย และในกรณีที่ นศ ใช้ vbox ติดตั้งและกำหนดค่าต่างๆเหมือนที่อธิบายในส่วน 1.2 นศ ก็สามารถใช้ไฟล์ Example.vbox.install-paramrc.sh ได้เลยเช่นกัน (ข้ามไปทำส่วนที่ 2.3 ได้)
 <p><p>
@@ -431,7 +430,7 @@ export VLAN_COMPUTE_NODE_IP_NIC=ens5
 ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น 
 <p>
 <p>
-<i><a id="usescript"><h4>2.3 การติดตั้ง OpenStack ocata ด้วย scripts </h4></a></i><br>
+<i><a id="usescript"><h4>2.3 การติดตั้ง OpenStack ocata ด้วย scripts </h4></a></i>
 <p>
 <p>
 เริ่มต้นการติดตั้งด้วยคำสั่งต่อไปนี้ (หมายเหตุ นศ ต้องออกคำสั่งใน user mode คือเป็น openstack user ห้ามใช้ sudo จนจบ script เหล่านี้)
@@ -508,11 +507,11 @@ $ ./OS-installer-10-initial-user-network.sh
 </pre>
 <p>
 <p>
-<i><a id="testhorizon"><h4>2.4 ใช้งาน OpenStack Horizon</h4></a></i><br>
+<i><a id="testhorizon"><h4>2.4 ใช้งาน OpenStack Horizon</h4></a></i>
 <p>
 <p>
 ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
-<p><p>
+<p>
 <details>
 <summary><b>สำหรับวิชา คพ. 449: คำอธิบายการเข้าถึง horizon web interface ผ่าน ssh tunneling</b></summary>
 เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น สมมุติว่าเรา map port 8088 ของ localhost เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
@@ -523,7 +522,7 @@ $ ./OS-installer-10-initial-user-network.sh
 </a>
 <p><p>สำหรับการติดตั้งด้วยมือนั้น ต่อไปนี้เราจะ assume ว่า เราได้สร้างไฟล์ที่ได้รับการเปลี่ยนแปลงเรียบร้อยแล้วใน subdirectory "files" และ sudo copy ไฟล์นั้นไปที่ directory ที่เป็นที่อยู่จริงของไฟล์เหล่านั้น 
 <p><p>
-<i><a id="ubunupdate"><h4>3.1 update ubuntu บน ทุก node <h4></a></i><br>
+<i><a id="ubunupdate"><h4>3.1 update ubuntu บน ทุก node </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
@@ -603,14 +602,14 @@ $ sudo apt-get -y install python-openstackclient
 $ sudo reboot
 </pre>
 <p><p>
-<i><a id="setnicchrony"><h4>3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </h4></a></i><br>
+<i><a id="setnicchrony"><h4>3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<b><i>PROJECT วิชา คพ. 449:</i>(1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</b> 
+<b>คำถาม PROJECT วิชา คพ. 449:</b> (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -634,7 +633,7 @@ $ ifconfig
 $
 $ sudo apt-get -y install chrony
 </pre>
-<b><i>PROJECT วิชา คพ. 449:</i>(2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </b>
+<b>PROJECT วิชา คพ. 449:</b> (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -647,5 +646,9 @@ $ sudo service chrony restart
 <p><p>
 ต่อ.... soon
 
-<b>อ้างอิง</b>
-1. http://docs.openstack.org/
+<p><p>
+<h3>อ้างอิง</h3>
+<p><p>
+[1] http://docs.openstack.org/ <br>
+[2] https://docs.openstack.org/ocata/install/ubuntu-services.html <br>
+[3] https://docs.openstack.org/ocata/networking-guide/ <br>
