@@ -8,7 +8,7 @@ Faculty of science and technology <br>
 Thammasat University.
 
 <p>
-<h3>การติดตั้งระบบ OpenStack Ocata แบบ Multi-node & DVR ด้วย installation scripts บน ubuntu 16.04 </h3> <br>
+<h2>การติดตั้งระบบ OpenStack Ocata แบบ Multi-node & DVR ด้วย installation scripts บน ubuntu 16.04 </h2> <br>
 <p>
 ให้ นศ เตรียมเครื่องตามส่วนที่ 1 และหลังจากนั้นเลือกเอาอันใดอันหนึ่งว่าจะติดตั้งด้วย scripts(ส่วนที่ 2) หรือด้วยมือ (ส่วนที่ 3)  
 <ul>
@@ -27,12 +27,12 @@ Thammasat University.
  <li> 3. <a href="#part3">ติดตั้งด้วยมือ</a> 
 </ul>
 <p>
-<a id="part1"><h4>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h4></a>
+<a id="part1"><h3>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h3></a>
 <p>
  <p>
  เราจะมีการเตรียมการสองแบบคือ การเตรียมการสำหรับการติดตั้งโดยใช้ kvm vm หรือโดยใช้ virtual box vm (vbox)
 <p>
- <i><a id="kvmhost">1.1 การเตรียมเครื่องเพื่อติดตั้งบน kvm vm หรือเครื่องจริง</a></i>
+ <i><a id="kvmhost"><h4>1.1 การเตรียมเครื่องเพื่อติดตั้งบน kvm vm หรือเครื่องจริง</h4></a></i>
 <p> 
   นศ จะเตรียมเครื่อง ubuntu 16.04.x จำนวน 4 เครื่องเชื่อมต่อกันบนเนตดังภาพที่ 1 ได้แก่เครื่องชื่อ controller network compute และ compute1 (ชื่อเครื่องต้องตรงกับผลจากคำสั่ง hostname) จากภาพกำหนดให้เครื่องที่ controller มี spec แนะนำคือ cpu 4 cores RAM 6 ถึง 8 GB Disk 16-20 GB เครื่อง network มี cpu 1-2 cores RAM 512MB-1GB Disk 8-10 GB เครื่อง compute และ compute1 มี cpu 4 cores RAM 2-4 GB Disk 16-20 GB (เป็น spec ใช้สำหรับการศึกษา ถ้าจะ deploy ขอให้ดู official OpenStck doc) 
   <p>
@@ -51,12 +51,18 @@ network ที่ใช้ในการติดตั้งได้แก่
  </ul>
 จากภาพที่ 1 สมมุตว่า NIC ที่ 1 คือ ens3 NIC ที่ 2 คือ ens4 NIC ที่ 3 คือ ens5 NIC ที่ 4 คือ ens6 จะเห็นว่าเครื่อง conroller มี ens3 อันเดียว เครื่อง network compute แบะ compute1 ทั้งหมด มี ens3 ถึง ens6 
 <p><p>
- <b>สำหรับวิชา คพ. 449:</b> 
+<details>
+ <summary><b>สำหรับวิชา คพ. 449: คำอธิบายการจำลองการติดตั้งโดยใช้ KVM virtual machines และ openvswitch network bridges</b></summary> 
 เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab ดังภาพที่ 2 
   <p>
   <img src="documents/architecturetunnel.png"> <br>
    ภาพที่ 2 <br>
-จากภาพ สมมุติว่า server มี IP address คือ 10.100.13.13 เราจะใช้ openvswitch bridge จำลอง management network data tunnel network และ vlan network และใช้ kvm จำลอง openstack nodes บนเครื่องนั้น ผู้ใช้สามารถเข้าถึง vm ได้สองวิธี วิธีแรกคือการเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server 10.100.13.13 เป็นตัวกลาง (เรา assume ว่าผู้อ่านคุ้นเคยกับ ssh tunneling ดังนั้นจะไม่อธิบาย ณ. ที่นี้) วิธีที่สองคือการใช้ VNC client ซึ่งผมจะสอนใน class เมื่อเรียนเรื่องการใช้งาน KVM 
+จากภาพ สมมุติว่า server มี IP address คือ 10.100.13.13 เราจะใช้ openvswitch bridge จำลอง management network data tunnel network และ vlan network และใช้ KVM จำลอง openstack nodes บนเครื่องนั้น ผู้ใช้สามารถเข้าถึง vm ได้สองวิธี ได้แก่ 
+ <ul>
+    <li>การเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server 10.100.13.13 เป็นตัวกลาง เรา assume ว่าผู้อ่านคุ้นเคยกับ ssh tunneling ดังนั้นจะไม่อธิบาย ณ. ที่นี้ 
+    <li>การใช้ VNC client ซึ่งผมจะสอนใน class เมื่อเรียนเรื่องการใช้งาน KVM
+ </ul>
+ </details>
 <p><p>
 เพื่อให้การติดตั้งเร็วขึ้นให้ นศ กำหนดค่า apt configuration ของเครื่องต่างๆให้ใช้ ubuntu repository ในประเทศไทย โดยกำหนดค่าใน /etc/apt/sources.list ด้วยมือ หรือใช้คำสั่ง sed ข้างล่าง บน openstack node ทุกเครื่อง 
 <pre>
@@ -283,16 +289,16 @@ openstack@compute1:~$
 <p><p>
 เมื่อเช็คเสร็จแล้วให้ ลบ และ ifdown หรือ ifconfig down IP address ของ ens4 ens5 ens6 บนทุกเครื่องออก เราจะใช้ installation scripts กำหนดค่า หรือกำหนดค่าเองด้วยมือภายหลัง   
 <p><p>
- <i><a id="vboxhost">1.2 การเตรียมเครื่องสำหรับติดตั้งบน vbox vm </a></i>
+ <i><a id="vboxhost"><h4>1.2 การเตรียมเครื่องสำหรับติดตั้งบน vbox vm </h4></a></i>
 <p>
 นศ สามารถอ่านคำอธิบายการเตรียม vbox vm สำหรับติดตั้ง openstack ocata ได้ที่เอกสาร <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/openstack-ocata-vbox-vm-preparation.pdf">documents/openstack-ocata-vbox-vm-preparation.pdf</a> ขอให้สร้าง vm และกำหนดค่าต่างๆตามนั้น 
 <p><p>
 นศ สามารถดูคลิป youtube ประกอบได้ที่ (ผมไม่ได้เตียม script พูดประกอบ clip ขอให้ทนฟังการพูดตะกุกตะกักหน่อยนะครับ :-) ) <a href="https://www.youtube.com/watch?v=AkDoef8gUJY&index=1&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">set up virtual gateway on controller</a> และ <a href="https://www.youtube.com/watch?v=N3AfvrlJw2M&index=2&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">install and setup network, compute, and compute1 vbox vms</a>
 <a id="part2"> 
-<h4>ส่วนที่ 2: ติดตั้งด้วย scripts</h4>
+<h3>ส่วนที่ 2: ติดตั้งด้วย scripts</h3>
 </a>
 <p><p>
-<i><a id="downloadinstaller">2.1 ดาวน์โหลด openstack-ocata-installer scripts</a></i><br>
+<i><a id="downloadinstaller"><h4>2.1 ดาวน์โหลด openstack-ocata-installer scripts</h4></a></i><br>
 <p>
 นศ จะใช้เครื่อง controller เป็นหลักในการติดตั้งด้วย script เริ่มต้นด้วยการ login เข้า openstack user (makes sure ว่า username และ password คือ "openstack" บนทุกเครื่อง) และ download script ด้วยคำสั่ง (ดู <a href="https://www.youtube.com/watch?v=a0JQYmsaPIs&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&index=3">youtube video</a>)
 <pre>
@@ -316,7 +322,7 @@ $ cp documents/Example.vbox.install-paramrc.sh install-paramrc.sh
 <p>
 แต่ถ้าติดตั้งบน kvm หรือเครื่องจริงก็ให้ใช้ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ที่มีอยู่แต่เดิมเป็นตัวอย่าง <br> 
 <p>
-<i><a id="paramrc">2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </a></i><br>
+<i><a id="paramrc"><h4>2.2 กำหนดค่าพารามีเตอร์สำหรับการติดตั้ง </h4></a></i><br>
 <p>
 ต่อไป นศ จะกำหนด configuration สำหรับการติอตั้งโดยกำหนดค่าในไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/install-paramrc.sh">install-paramrc.sh</a> ซึ่งถ้า นศ กำหนดค่า vm และเนตตามที่ระบุใน ส่วนที่ 1.1 และติดตั้งบน kvm (ที่ใช้รหัส ens เป็นชื่อ NIC) นศ ก็สามารถใช้ไฟล์ install-paramrc.sh นี้ได้เลย และในกรณีที่ นศ ใช้ vbox ติดตั้งและกำหนดค่าต่างๆเหมือนที่อธิบายในส่วน 1.2 นศ ก็สามารถใช้ไฟล์ Example.vbox.install-paramrc.sh ได้เลยเช่นกัน (ข้ามไปทำส่วนที่ 2.3 ได้)
 <p><p>
@@ -425,7 +431,7 @@ export VLAN_COMPUTE_NODE_IP_NIC=ens5
 ในไฟล์ install-paramrc.sh เรากำหนดค่าตัวแปรสำหรับ compute1 node ในแบบเดียวกันกับการกำหนดค่าของ compute node ข้างต้น 
 <p>
 <p>
-<i><a id="usescript">2.3 การติดตั้ง OpenStack ocata ด้วย scripts </a></i><br>
+<i><a id="usescript"><h4>2.3 การติดตั้ง OpenStack ocata ด้วย scripts </h4></a></i><br>
 <p>
 <p>
 เริ่มต้นการติดตั้งด้วยคำสั่งต่อไปนี้ (หมายเหตุ นศ ต้องออกคำสั่งใน user mode คือเป็น openstack user ห้ามใช้ sudo จนจบ script เหล่านี้)
@@ -502,20 +508,22 @@ $ ./OS-installer-10-initial-user-network.sh
 </pre>
 <p>
 <p>
-<i><a id="testhorizon">2.4 ใช้งาน OpenStack Horizon</a></i><br>
+<i><a id="testhorizon"><h4>2.4 ใช้งาน OpenStack Horizon</h4></a></i><br>
 <p>
 <p>
 ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
 <p><p>
-<b>สำหรับวิชา คพ. 449:</b>
-เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น port 8088 ของ localhost map เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
+<details>
+<summary><b>สำหรับวิชา คพ. 449: คำอธิบายการเข้าถึง horizon web interface ผ่าน ssh tunneling</b></summary>
+เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น สมมุติว่าเรา map port 8088 ของ localhost เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
+</details>
 <p>
 <a id="part2"> 
-<h4>ส่วนที่ 3: ติดตั้งด้วยมือ</h4>
+<h3>ส่วนที่ 3: ติดตั้งด้วยมือ</h3>
 </a>
 <p><p>สำหรับการติดตั้งด้วยมือนั้น ต่อไปนี้เราจะ assume ว่า เราได้สร้างไฟล์ที่ได้รับการเปลี่ยนแปลงเรียบร้อยแล้วใน subdirectory "files" และ sudo copy ไฟล์นั้นไปที่ directory ที่เป็นที่อยู่จริงของไฟล์เหล่านั้น 
 <p><p>
-<i><a id="ubunupdate">3.1 update ubuntu บน ทุก node </a></i><br>
+<i><a id="ubunupdate"><h4>3.1 update ubuntu บน ทุก node <h4></a></i><br>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
@@ -595,14 +603,14 @@ $ sudo apt-get -y install python-openstackclient
 $ sudo reboot
 </pre>
 <p><p>
-<i><a id="setnicchrony">3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </a></i><br>
+<i><a id="setnicchrony"><h4>3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </h4></a></i><br>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-กำหนดค่าใน chrony.conf
+<b><i>PROJECT วิชา คพ. 449:</i>(1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</b> 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -622,12 +630,11 @@ $ sudo ifdown ens5
 $ sudo ifup ens5
 $ sudo ifdown ens6
 $ sudo ifup ens6
-$
 $ ifconfig
-</pre>
-<pre>
+$
 $ sudo apt-get -y install chrony
 </pre>
+<b><i>PROJECT วิชา คพ. 449:</i>(2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </b>
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
