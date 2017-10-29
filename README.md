@@ -525,6 +525,7 @@ $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/mas
 </pre>
 รันคำสั่งต่อไปนี้
 <pre>
+$ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
@@ -543,7 +544,7 @@ $ sudo reboot
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/hosts">files/hosts</a> /etc/hosts
-$ 
+$ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
@@ -562,7 +563,7 @@ $ sudo reboot
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/hosts">files/hosts</a> /etc/hosts
-$ 
+$ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
@@ -581,7 +582,7 @@ $ sudo reboot
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/hosts">files/hosts</a> /etc/hosts
-$ 
+$ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
 $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
