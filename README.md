@@ -530,7 +530,7 @@ $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
 </pre>
-ถ้า update /etc/apt/sources.list ให้ชี้ไปที่ th.archive.ubuntu.com แล้วก็ไม่จำเป็นต้องรัน copy ไฟล์ files/local-sources.list ก้ได้ และคำสั่ง add-apt-repository จะรอให้ นศ กด [ENTER] 
+คำสั่ง add-apt-repository จะรอให้ นศ กด [ENTER] 
 <p>
 <pre>
 $ sudo apt-get update 
