@@ -519,12 +519,14 @@ $ ./OS-installer-10-initial-user-network.sh
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-login เข้า user openstack และใช้คำสั่งต่อไปนี้
+login เข้า user openstack และ modify ไฟล์ /etc/hosts และ /etc/apt/sources.list (หมายเหคุ ต่อไปนี้เราจะใช้วิธีสร้างไฟล์ที่ได้รับการเปลี่ยนแปลงใน subdirectory "files" และ sudo copy ไฟล์นั้นไปที่ directory ที่เป็นที่อยู่จริงของไฟล์เหล่านั้น)  
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/hosts">files/hosts</a> /etc/hosts
 $ sudo cp /etc/apt/sources.list /etc/apt/sources.list.saved
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local-sources.list">files/local-sources.list</a> /etc/apt/sources.list
-$ 
+</pre>
+รันคำสั่งต่อไปนี้
+<pre>
 $ sudo apt-get update
 $ sudo apt-get -y install software-properties-common
 $ sudo add-apt-repository cloud-archive:ocata
