@@ -376,6 +376,7 @@ export NTP_SERVER_LOCAL=10.0.10.126
   <img src="documents/architecturevariables.png"> <br>
    ภาพที่ 3 <br>
 </details>
+<p>
 จากภาพ ตัวแปรต่อไปนี้ใช้กำหนดค่าของ management network 
 <pre>
 export MANAGEMENT_NETWORK_NETMASK=255.255.255.0
@@ -612,7 +613,7 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<textarea>คำถาม PROJECT วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </textarea> 
+<textarea cols="80" rows="1">คำถาม PROJECT วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </textarea> 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
