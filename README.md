@@ -623,14 +623,14 @@ $ sudo apt-get -y install chrony
 </pre>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
 <pre>
-$ sudo cp files/chrony.conf /etc/chrony/chrony.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
 </pre>
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
 <pre>
-$ sudo cp files/interfaces /etc/network/interfaces
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/interfaces">files/interfaces</a> /etc/network/interfaces
 </pre>
 <pre>
 $ sudo ifdown ens3
@@ -647,7 +647,7 @@ $ sudo apt-get -y install chrony
 </pre>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
-$ sudo cp files/chrony.conf /etc/chrony/chrony.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
 </pre>
 <p><p>
