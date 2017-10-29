@@ -521,7 +521,7 @@ $ ./OS-installer-10-initial-user-network.sh
 เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น สมมุติว่าเรา map port 8088 ของ localhost เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
 </details>
 <p>
-<a id="part2"> 
+<a id="part3"> 
 <h3>ส่วนที่ 3: ติดตั้งด้วยมือ</h3>
 </a>
 <p><p>สำหรับการติดตั้งด้วยมือนั้น ต่อไปนี้เราจะ assume ว่า เราได้สร้างไฟล์ที่ได้รับการเปลี่ยนแปลงเรียบร้อยแล้วใน subdirectory "files" และ sudo copy ไฟล์นั้นไปที่ directory ที่เป็นที่อยู่จริงของไฟล์เหล่านั้น 
