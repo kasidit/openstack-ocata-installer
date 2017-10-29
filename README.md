@@ -614,7 +614,7 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม PROJECT วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -638,7 +638,7 @@ $ ifconfig
 $
 $ sudo apt-get -y install chrony
 </pre>
-<b>PROJECT วิชา คพ. 449:</b> (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร 
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp files/chrony.conf /etc/chrony/chrony.conf
 $ sudo service chrony restart
