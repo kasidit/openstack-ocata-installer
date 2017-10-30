@@ -819,6 +819,7 @@ $ sudo apt-get install memcached python-memcache
 </pre>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr></table>
 </pre>
+<pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/memcached.conf">files/memcached.conf</a> /etc/memcached.conf
 $ sudo service memcached restart
 </pre>
@@ -834,7 +835,7 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO '
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBPASS';"
 </pre>
 <pre>
-apt-get -y install keystone
+S sudo apt-get -y install keystone
 </pre>
 <pre>
 $ sudo cp files/keystone.conf /etc/keystone/keystone.conf
