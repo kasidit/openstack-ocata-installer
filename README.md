@@ -561,6 +561,46 @@ $ ./exe-config-installer.sh
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute1 ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute1/files/
 </ul>
 ถ้า นศ ต้องการ sudo cp ไฟล์เหล่านี้ เหมือนในคำสั่งที่จะใช้ต่อไปในการติดตั้งด้วยมือ นศ ต้อง tar ไฟล์ใน "files" directory เหล่านี้และ scp ไปยังเครื่อง controller network compute และ compute1 และ untar ด้วยตนเองก่อนการติดตั้ง 
+p><p>
+<b>เครื่อง controller</b>
+<p><p>
+<pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller
+$ cd controller 
+$ tar cvf controller-files.tar files
+$ cp controller-files.tar $HOME/
+$ cd $HOME 
+$ tar xvf controller-files.tar
+$ ls
+</pre>
+นศ จะเห็น directory "files" ใน openstack account บนเครื่อง controller
+<pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller
+$ cd network 
+$ tar cvf network-files.tar files
+$ scp network-files.tar openstack@10.0.10.21:/home/openstack/
+$ ssh openstack@10.0.10.21 tar xvf /home/openstack/network-files.tar
+$ ssh openstack@10.0.10.21 ls -l
+</pre>
+นศ จะเห็น directory "files" ใน openstack account บนเครื่อง network
+<pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller
+$ cd compute 
+$ tar cvf compute-files.tar files
+$ scp compute-files.tar openstack@10.0.10.31:/home/openstack/
+$ ssh openstack@10.0.10.31 tar xvf /home/openstack/compute-files.tar
+$ ssh openstack@10.0.10.31 ls -l
+</pre>
+นศ จะเห็น directory "files" ใน openstack account บนเครื่อง compute
+<pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller
+$ cd compute1 
+$ tar cvf compute1-files.tar files
+$ scp compute1-files.tar openstack@10.0.10.32:/home/openstack/
+$ ssh openstack@10.0.10.32 tar xvf /home/openstack/compute1-files.tar
+$ ssh openstack@10.0.10.32 ls -l
+</pre>
+นศ จะเห็น directory "files" ใน openstack account บนเครื่อง compute1
 </details>
 </td></tr></table>
 <p><p>
