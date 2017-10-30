@@ -699,7 +699,7 @@ $ sudo ifup ens6
 $ 
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -709,7 +709,23 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-
+<pre>
+$ sudo chronyc sources
+$ sudo apt-get -y install mariadb-server
+$ sudo apt-get -y install python-pymysql
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () นศ ต้องกำหนดค่าอะไรบ้างในไฟล์  99-openstack.cnf </td></tr></table>
+<pre>
+cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/99-openstack.cnf">files/99-openstack.cnf</a> /etc/mysql/mariadb.conf.d/99-openstack.cnf
+service mysql restart
+mysql_secure_installation
+</pre>
+คำสั่ง mysql_secure_installation script เป็น script สำคัญที่จะให้ นศ กำหนดค่าเริ่มต้นของ mysql database script นี้จะถามคำถามต่อไปนี้
+<ul>
+<li> 1. ให้ผู้ใช้กรอก root password ของ mysql เนื่องจาก นศ เพิ่งเริ่มติดตั้งจะไม่มี root password ให้ enter  
+<li> 2. ให้ นศ กรอก password ใหม่ของ mysql root โดย script จะถามให้กรอกค่าสองรอบ 
+<li> 3. หลังจากนั้น script จะถามว่า ลบ test account ใหม่ และอื่นๆ ให้ตอบ "y" ให้หมด
+</ul>
 
 
 ต่อ.... soon
