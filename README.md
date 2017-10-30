@@ -862,6 +862,7 @@ $ sudo rm -f /var/lib/keystone/keystone.db
 <b>เครื่อง controller</b>
 <p><p>
 กำหนด environment variables เพื่อปฏิบัติการแบบเป็น admin user ซึ่งทำให้ นศ สามารถใช้คำสั่ง "openstack" (ถัดไป)เพื่อสร้าง service endpoint และสร้าง user ใหม่คือ demo user 
+<p>
 <pre>
 $ export OS_USERNAME=admin
 $ export OS_PASSWORD=adminpassword
@@ -873,6 +874,7 @@ $ export OS_IDENTITY_API_VERSION=3
 $
 </pre>
 คำสั่งต่อไปนี้สร้าง service project สร้าง demo user สร้าง user role และ associate role นั้นให้กับ demo user   
+<p>
 <pre>
 $ openstack project create --domain default --description "Service Project" service
 $ openstack project create --domain default --description "Demo Project" demo
@@ -887,6 +889,7 @@ $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/mas
 $
 </pre>
 คำสั่งสองคำสั่งถัดไป ทดสอบว่า keystone ทำงานถูกต้อง โดยใช้สองคำสั่งถัดไปเรียกดู token สำหรับ admin และ demo users
+<p>
 <pre>
 $ unset OS_AUTH_URL OS_PASSWORD
 $ 
@@ -900,6 +903,7 @@ $ openstack --os-auth-url http://controller:5000/v3 \
 $
 </pre>
 ให้ นศ สร้างไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/admin-openrc.sh">./admin-openrc.sh</a> และทดสอบว่าสามารถเรียกใช้คำสั่ง openstack CLI ได้
+<p>
 <pre>
 $ vi <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/admin-openrc.sh">./admin-openrc.sh</a>
 $ source ./admin-openrc.sh
