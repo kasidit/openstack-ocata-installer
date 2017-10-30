@@ -630,7 +630,7 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -638,6 +638,7 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/interfaces">files/interfaces</a> /etc/network/interfaces
 </pre>
@@ -654,7 +655,7 @@ $ ifconfig
 $
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -662,9 +663,47 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง compute</b>
 <p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/interfaces">files/interfaces</a> /etc/network/interfaces
+$ sudo ifdown ens3
+$ sudo ifup ens3
+$ sudo ifdown ens4
+$ sudo ifup ens4
+$ sudo ifdown ens5
+$ sudo ifup ens5
+$ sudo ifdown ens6
+$ sudo ifup ens6
+$ 
+$ sudo apt-get -y install chrony
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
+$ sudo service chrony restart
+</pre>
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/interfaces">files/interfaces</a> /etc/network/interfaces
+$ sudo ifdown ens3
+$ sudo ifup ens3
+$ sudo ifdown ens4
+$ sudo ifup ens4
+$ sudo ifdown ens5
+$ sudo ifup ens5
+$ sudo ifdown ens6
+$ sudo ifup ens6
+$ 
+$ sudo apt-get -y install chrony
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
+$ sudo service chrony restart
+</pre>
 ต่อ.... soon
 
 <p><p>
