@@ -824,7 +824,7 @@ $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/mas
 $ sudo service memcached restart
 </pre>
 <p><p>
-<i><a id="installkeystone"><h4>3.3 ติดตั้ง keystone </h4></a></i>
+<i><a id="installkeystone"><h4>3.5 ติดตั้ง keystone </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
@@ -857,7 +857,7 @@ $ sudo service apache2 restart
 $ sudo rm -f /var/lib/keystone/keystone.db
 </pre>
 <p><p>
-<i><a id="setendpoints"><h4>3.5 ติดตั้ง OpenStack Service Endpoint </h4></a></i>
+<i><a id="setendpoints"><h4>3.6 ติดตั้ง OpenStack Service Endpoint </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
