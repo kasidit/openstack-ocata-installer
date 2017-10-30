@@ -539,7 +539,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <p><p>
 การติดตั้งด้วยมือเป็นวิธีการติดตั้งที่จะทำให้ผู้ติดตั้งได้มีโอกาสเรียนรู้จักส่วนประกอบของ OpenStack มากที่สุด OpenStack ประกอบไปด้วย software component หลาย software ผู้ใช้จะต้องติดตั้งและกำหนดค่าในไฟล์ configuration ของ component เหล่านั้น ซึ่งส่วนใหญ่จะอยู่ใน /etc directory 
 <p><p>
-เพื่อความสะดวกในการเขียนคู่มือนี้ ผมจะอ้างอิงถึง configuration ไฟล์ใน "files" subdirectory นศ สามารถดูตัวอย่างไฟล์ได้ตาม URL link บนแต่ละไฟล์ หรือ
+เพื่อความสะดวกในการเขียนคู่มือนี้ ผมจะอ้างอิงถึง configuration ไฟล์ใน "files" subdirectory นศ สามารถดูตัวอย่างไฟล์ได้ตาม URL link บนแต่ละไฟล์และ เปรียบเทียบกับ official openstack ocata installation document [2] ที่ผมจะแนบ link ไว้ให้เป็นระยะๆแล้ว copy เนื้อหาของ configuration ไฟล์ไปใช้ตามที่จำเป็น หรือทำอีกวิธีหนึ่งคือ
 <table><tr><td>
 <details>
 <summary>ใช้ scriptsสร้าง configuration ไฟล์ใน "files/" directory  ด้วยตนเอง  (เหมือนที่ทำในส่วนที่ 2.1 และ 2.2)</summary>
@@ -560,6 +560,7 @@ $ ./exe-config-installer.sh
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute/files/
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute1 ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute1/files/
 </ul>
+ถ้า นศ ต้องการ sudo cp ไฟล์เหล่านี้ เหมือนในคำสั่งที่จะใช้ต่อไปในการติดตั้งด้วยมือ นศ ต้อง tar ไฟล์ใน "files" directory เหล่านี้และ scp ไปยังเครื่อง controller network compute และ compute1 และ untar ด้วยตนเองก่อนการติดตั้ง 
 </details>
 </td></tr></table>
 <p><p>
