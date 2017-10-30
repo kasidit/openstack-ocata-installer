@@ -540,6 +540,7 @@ $ ./OS-installer-10-initial-user-network.sh
 การติดตั้งด้วยมือเป็นวิธีการติดตั้งที่จะทำให้ผู้ติดตั้งได้มีโอกาสเรียนรู้จักส่วนประกอบของ OpenStack มากที่สุด OpenStack ประกอบไปด้วย software component หลาย software ผู้ใช้จะต้องติดตั้งและกำหนดค่าในไฟล์ configuration ของ component เหล่านั้น ซึ่งส่วนใหญ่จะอยู่ใน /etc directory 
 <p><p>
 เพื่อความสะดวกในการเขียนคู่มือนี้ ผมจะอ้างอิงถึง configuration ไฟล์ใน "files" subdirectory นศ สามารถดูตัวอย่างไฟล์ได้ตาม URL link บนแต่ละไฟล์ หรือ
+<table><tr><td>
 <details>
 <summary>ใช้ scriptsสร้าง configuration ไฟล์ใน "files/" directory  ด้วยตนเอง  (เหมือนที่ทำในส่วนที่ 2.1 และ 2.2)</summary>
 <pre>
@@ -559,8 +560,7 @@ $ ./exe-config-installer.sh
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute1 ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute1/files/
 </ul>
 </details>
-<p><p>
-เมื่อผมอ้างอิงถึง files/abc.conf เวลาติดตั้งบนเครื่อง controller นศ สามารถดูตัวอย่างไฟล์ได้ที่ 
+</td></tr></table>
 <p><p>
 ขอให้ นศ ศึกษารายละเอียดของการกำหนดค่า configuration ใน [1][2][3] และตอบคำถาม PROJECT ของวิชา คพ 449 ที่จะถามในคู่มือนี้เป็นระยะๆ ขอให้บรรยายคำตอบในรายงานอย่างชัดเจน  
 <p><p>
