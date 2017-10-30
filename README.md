@@ -909,7 +909,11 @@ $ vi <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/d
 $ source ./admin-openrc.sh
 $ openstack token issue
 </pre>
-
+<p><p>
+<i><a id="installglance"><h4>3.7 ติดตั้ง glance </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
 ต่อ.... soon
 
 <p><p>
