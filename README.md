@@ -553,6 +553,7 @@ $ cd openstack-ocata-installer
 $ ./exe-config-installer.sh
 </pre>
 หลังจากนั้น script จะสร้าง installation scripts ใน $HOME/openstack-ocata-installer/OPSInstaller/* directory และสร้าง configuration ไฟล์ใน  $HOME/openstack-ocata-installer/OPSInstaller/*/files/ directories ซึ่ง นศ สามารถอ้างอิงถึง configuration ไฟล์ใน "files" directory และดูเป็นตัวอย่างได้ 
+<p><p>
 <ul>
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง controller ให้ดูตัวอย่าง configuration ไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/controller/files/ 
 <li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง network ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/network/files/ 
