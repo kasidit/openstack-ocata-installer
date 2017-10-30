@@ -807,7 +807,28 @@ $ sudo chronyc sources
 <p><p>
 <i><a id="installrabbitmq"><h4>3.4 ติดตั้ง rabbitmq </h4></a></i>
 <p><p>
+<b>เครื่อง controller</b>
+<p><p>
+<pre>
+apt-get -y install rabbitmq-server
 
+echo -n "* set rabbitmq password for guest...press"
+#read varkey
+rabbitmqctl add_user openstack RABBIT_PASS
+rabbitmqctl set_permissions openstack ".*" ".*" ".*"
+
+printf "* install memcache..press\n"
+#read varkey
+apt-get install memcached python-memcache
+cp files/memcached.conf /etc/memcached.conf
+service memcached restart
+
+</pre>
+<p><p>
+<i><a id="installkeystone"><h4>3.3 ติดตั้ง keystone </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
 ต่อ.... soon
 
 <p><p>
