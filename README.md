@@ -861,6 +861,7 @@ $ sudo rm -f /var/lib/keystone/keystone.db
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
+กำหนด environment variables เพื่อปฏิบัติการแบบเป็น admin user ซึ่งทำให้ นศ สามารถใช้คำสั่ง "openstack" (ถัดไป)เพื่อสร้าง service endpoint และสร้าง user ใหม่คือ demo user 
 <pre>
 $ export OS_USERNAME=admin
 $ export OS_PASSWORD=adminpassword
@@ -870,6 +871,9 @@ $ export OS_PROJECT_DOMAIN_NAME=Default
 $ export OS_AUTH_URL=http://controller:35357/v3
 $ export OS_IDENTITY_API_VERSION=3
 $
+</pre>
+คำสั่งต่อไปนี้สร้าง service project สร้าง demo user สร้าง user role และ associate role นั้นให้กับ demo user   
+<pre>
 $ openstack project create --domain default --description "Service Project" service
 $ openstack project create --domain default --description "Demo Project" demo
 $ openstack user create --domain default --password demopassword demo
@@ -877,10 +881,13 @@ $ openstack role create user
 $ openstack role add --project demo --user demo user
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน keystone-paste.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน keystone-paste.conf (คำถามนี้อาจถูกลบออกเนื่องจากบรรทัดถัดไปอาจ Deprecate)</td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone-paste.ini">files/keystone-paste.ini</a> /etc/keystone/keystone-paste.ini
 $
+</pre>
+คำสั่งสองคำสั่งถัดไป ทดสอบว่า keystone ทำงานถูกต้องโดยเรียกดู token สำหรับ admin และ demo users
+<pre>
 $ unset OS_AUTH_URL OS_PASSWORD
 $ 
 $ openstack --os-auth-url http://controller:35357/v3 \
