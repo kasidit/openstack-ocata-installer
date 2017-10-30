@@ -810,22 +810,54 @@ $ sudo chronyc sources
 <b>เครื่อง controller</b>
 <p><p>
 <pre>
-apt-get -y install rabbitmq-server
-
-echo -n "* set rabbitmq password for guest...press"
-#read varkey
-rabbitmqctl add_user openstack RABBIT_PASS
-rabbitmqctl set_permissions openstack ".*" ".*" ".*"
-
-printf "* install memcache..press\n"
-#read varkey
-apt-get install memcached python-memcache
-cp files/memcached.conf /etc/memcached.conf
-service memcached restart
-
+$ sudo apt-get -y install rabbitmq-server
+$
+$ sudo rabbitmqctl add_user openstack RABBIT_PASS
+$ sudo rabbitmqctl set_permissions openstack ".*" ".*" ".*"
+$
+$ sudo apt-get install memcached python-memcache
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr></table>
+</pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/memcached.conf">files/memcached.conf</a> /etc/memcached.conf
+$ sudo service memcached restart
 </pre>
 <p><p>
 <i><a id="installkeystone"><h4>3.3 ติดตั้ง keystone </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+สร้าง database สำหรับ keystone ทบทวนความจำว่า root password ของ mysql ที่เรากำหนดในตัวอย่างนี้คือ mysqlpassword
+<pre>
+$ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE keystone;"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBPASS';"
+</pre>
+<pre>
+apt-get -y install keystone
+</pre>
+<pre>
+$ sudo cp files/keystone.conf /etc/keystone/keystone.conf
+$ sudo su -s /bin/sh -c "keystone-manage db_sync" keystone
+$
+$ sudo keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
+$ sudo keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
+$
+$ sudo keystone-manage bootstrap --bootstrap-password adminpassword \
+--bootstrap-admin-url http://controller:35357/v3/ \
+--bootstrap-internal-url http://controller:5000/v3/ \
+--bootstrap-public-url http://controller:5000/v3/ \
+--bootstrap-region-id RegionOne
+$
+</pre>
+<pre>
+S sudo cp files/apache2.conf /etc/apache2/apache2.conf
+$
+$ sudo service apache2 restart
+$ sudo rm -f /var/lib/keystone/keystone.db
+</pre>
+<p><p>
+<i><a id="setendpoints"><h4>3.5 ติดตั้ง OpenStack Service Endpoint </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
