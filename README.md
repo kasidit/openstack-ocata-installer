@@ -886,7 +886,7 @@ $
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone-paste.ini">files/keystone-paste.ini</a> /etc/keystone/keystone-paste.ini
 $
 </pre>
-คำสั่งสองคำสั่งถัดไป ทดสอบว่า keystone ทำงานถูกต้องโดยเรียกดู token สำหรับ admin และ demo users
+คำสั่งสองคำสั่งถัดไป ทดสอบว่า keystone ทำงานถูกต้อง โดยใช้สองคำสั่งถัดไปเรียกดู token สำหรับ admin และ demo users
 <pre>
 $ unset OS_AUTH_URL OS_PASSWORD
 $ 
@@ -899,6 +899,13 @@ $ openstack --os-auth-url http://controller:5000/v3 \
   --os-project-name demo --os-username demo --os-password demopassword token issue
 $
 </pre>
+ให้ นศ สร้างไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/admin-openrc.sh">./admin-openrc.sh</a> และทดสอบว่าสามารถเรียกใช้คำสั่ง openstack CLI ได้
+<pre>
+$ vi <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/admin-openrc.sh">./admin-openrc.sh</a>
+$ source ./admin-openrc.sh
+$ openstack token issue
+</pre>
+
 ต่อ.... soon
 
 <p><p>
