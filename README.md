@@ -526,7 +526,9 @@ $ ./OS-installer-10-initial-user-network.sh
 <tr><td>
 <details>
 <summary><b>สำหรับวิชา คพ. 449: คำอธิบายการเข้าถึง horizon web interface ผ่าน ssh tunneling</b></summary>
-เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port ยกตัวอย่างเช่น สมมุติว่าเรา map port 8088 ของ localhost เข้ากับ 10.0.10.11:80 บนเครื่อง server ที่ นศ ติดตั้ง KVM หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
+เนื่องจากเราใช้ KVM (ดูภาพที่ 2) นศ ต้องสร้าง ssh tunnel โดยใช้ "tunnel" feature ของ putty และกำหนดให้ port 8088 ของเครื่อง client computer ที่ นศ ใช้ (เครื่อง localhost) เข้ากับ URI 10.0.10.11:80 ที่เข้าถึงได้จากเครื่อง server ที่ นศ ติดตั้ง KVM (เครื่อง 10.100.13.13 ในภาพที่ 2) 
+<p><p>
+หลังจาก login ด้วย putty เข้าสู่เครื่อง server แล้ว นศ สามารถเข้าถึง web interface ของ openstack จาก client computer ที่ นศ รัน putty ได้ที่ URL http://localhost:8088/horizon/
 </details>
 </td></tr>
 </table>
