@@ -26,13 +26,13 @@ Thammasat University.
       </ul>
  <li> 3. <a href="#part3">ติดตั้งด้วยมือ</a> 
       <ul>
-       <li> <a href="#ubunupdate"><h4>3.1 update ubuntu บน ทุก node </h4></a>
-       <li> <a href="#setnicchrony"><h4>3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </h4></a>
-       <li> <a href="#installmysql"><h4>3.3 ติดตั้ง mysql </h4></a>
-       <li> <a href="#installrabbitmq"><h4>3.4 ติดตั้ง rabbitmq </h4></a>
-       <li> <a href="#installkeystone"><h4>3.5 ติดตั้ง keystone </h4></a>
-       <li> <a href="#setendpoints"><h4>3.6 ติดตั้ง OpenStack Service Endpoint </h4></a>
-       <li> <a href="#installglance"><h4>3.7 ติดตั้ง glance </h4></a>
+       <li> <a href="#ubunupdate">3.1 update ubuntu บน ทุก node</a>
+       <li> <a href="#setnicchrony">3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony)</a>
+       <li> <a href="#installmysql">3.3 ติดตั้ง mysql </a>
+       <li> <a href="#installrabbitmq">3.4 ติดตั้ง rabbitmq </a>
+       <li> <a href="#installkeystone">3.5 ติดตั้ง keystone </a>
+       <li> <a href="#setendpoints">3.6 ติดตั้ง OpenStack Service Endpoint </a>
+       <li> <a href="#installglance">3.7 ติดตั้ง glance </a>
       </ul>
 </ul>
 <p>
