@@ -723,10 +723,25 @@ mysql_secure_installation
 คำสั่ง mysql_secure_installation script เป็น script สำคัญที่จะให้ นศ กำหนดค่าเริ่มต้นของ mysql database script นี้จะถามคำถามต่อไปนี้
 <ul>
 <li> 1. ให้ผู้ใช้กรอก root password ของ mysql เนื่องจาก นศ เพิ่งเริ่มติดตั้งจะไม่มี root password ให้ enter  
-<li> 2. ให้ นศ กรอก password ใหม่ของ mysql root โดย script จะถามให้กรอกค่าสองรอบ 
+<li> 2. ให้ นศ กรอก password ใหม่ของ mysql root (กำหนดให้เป็นค่า mysqlpassword) โดย script จะถามให้กรอกค่านี้สองรอบ 
 <li> 3. หลังจากนั้น script จะถามว่า ลบ test account ใหม่ และอื่นๆ ให้ตอบ "y" ให้หมด
 </ul>
-
+<p><p>
+<b>เครื่อง compute</b>
+<p><p>
+<pre>
+$ sudo chronyc sources
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ผลการรัน chronyc ต่างจากบนเครื่อง controller อย่างไร </td></tr></table>
+<p><p>
+<b>เครื่อง compute1</b>
+<p><p>
+<pre>
+$ sudo chronyc sources
+</pre>
+<p><p>
+<i><a id="installrabbitmq"><h4>3.4 ติดตั้ง rabbitmq </h4></a></i>
+<p><p>
 
 ต่อ.... soon
 
