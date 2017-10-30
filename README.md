@@ -312,10 +312,10 @@ $ cd openstack-ocata-installer
 <p>
 เมื่อดู content ของ directory จะมีไฟล์และ subdirectory ดังนี้
 <pre>
-openstack@controller:~/openstack-ocata-installer$ ls
+$ ls
 config.d   exe-config-installer.sh  LICENSE                README.md
 documents  install-paramrc.sh       OPSInstaller-init.tar
-openstack@controller:~/openstack-ocata-installer$
+$
 </pre>
 <p>
 ในกรณีที่ นศ จะติดตั้งบน vbox vm ขอให้ copy ไฟล์ <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.vbox.install-paramrc.sh">Example.vbox.install-paramrc.sh</a> มาเป็น install-paramrc.sh ใน openstack-ocata-installer directory
@@ -539,7 +539,28 @@ $ ./OS-installer-10-initial-user-network.sh
 <p><p>
 การติดตั้งด้วยมือเป็นวิธีการติดตั้งที่จะทำให้ผู้ติดตั้งได้มีโอกาสเรียนรู้จักส่วนประกอบของ OpenStack มากที่สุด OpenStack ประกอบไปด้วย software component หลาย software ผู้ใช้จะต้องติดตั้งและกำหนดค่าในไฟล์ configuration ของ component เหล่านั้น ซึ่งส่วนใหญ่จะอยู่ใน /etc directory 
 <p><p>
-เพื่อความสะดวกในการเขียนคู่มือนี้ และเพื่อให้ นศ ได้ศึกษาการกำหนดค่า configuration ด้วยตนเอง ผมจะใช้ configuration ไฟล์ที่สร้างขึ้นโดย scripts ในส่วนที่ 2 และจะสมมุติว่า เราได้สร้างไฟล์ที่ได้รับการเปลี่ยนแปลงเรียบร้อยแล้วใน "files/" directory และเมื่อกำหนดค่า configuration เราจะ sudo copy ไฟล์ไปที่ configuration directory จริง 
+เพื่อความสะดวกในการเขียนคู่มือนี้ ผมจะอ้างอิงถึง configuration ไฟล์ใน "files" subdirectory นศ สามารถดูตัวอย่างไฟล์ได้ตาม URL link บนแต่ละไฟล์ หรือ
+<details>
+<summary>ใช้ scriptsสร้าง configuration ไฟล์ใน "files/" directory  ด้วยตนเอง  (เหมือนที่ทำในส่วนที่ 2.1 และ 2.2)</summary>
+<pre>
+$ cd $HOME
+$ git clone https://github.com/kasidit/openstack-ocata-installer
+$ cd openstack-ocata-installer
+</pre>
+กำหนดค่าใน install-paramrc.sh (<a href="#paramrc">ดูส่วนที่ 2.2</a>) และรัน ./exe-config-installer.sh
+<pre>
+$ ./exe-config-installer.sh
+</pre>
+หลังจากนั้น script จะสร้าง installation scripts ใน $HOME/openstack-ocata-installer/OPSInstaller/* directory และสร้าง configuration ไฟล์ใน  $HOME/openstack-ocata-installer/OPSInstaller/*/files/ directories ซึ่ง นศ สามารถอ้างอิงถึง configuration ไฟล์ใน "files" directory และดูเป็นตัวอย่างได้ 
+<ul>
+<li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง controller ให้ดูตัวอย่าง configuration ไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/controller/files/ 
+<li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง network ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/network/files/ 
+<li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute/files/
+<li>ถ้า นศ ติดตั้งด้วยมือบนเครื่อง compute1 ให้ดูไฟล์ที่  $HOME/openstack-ocata-installer/OPSInstaller/compute1/files/
+</ul>
+</details>
+<p><p>
+เมื่อผมอ้างอิงถึง files/abc.conf เวลาติดตั้งบนเครื่อง controller นศ สามารถดูตัวอย่างไฟล์ได้ที่ 
 <p><p>
 ขอให้ นศ ศึกษารายละเอียดของการกำหนดค่า configuration ใน [1][2][3] และตอบคำถาม PROJECT ของวิชา คพ 449 ที่จะถามในคู่มือนี้เป็นระยะๆ ขอให้บรรยายคำตอบในรายงานอย่างชัดเจน  
 <p><p>
@@ -549,6 +570,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <p><p>
 login เข้า user openstack และ modify ไฟล์ /etc/hosts 
 <pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller/controller
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/hosts">files/hosts</a> /etc/hosts
 </pre>
 รันคำสั่งต่อไปนี้
@@ -571,6 +593,7 @@ $ sudo reboot
 <p><p>
 login เข้า user openstack และใช้คำสั่งต่อไปนี้
 <pre>
+$ cd $HOME/openstack-ocata-installer/OPSInstaller/
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/hosts">files/hosts</a> /etc/hosts
 $ sudo sed -i "s/us.arch/th.arch/g" /etc/apt/sources.list
 $ sudo apt-get update
