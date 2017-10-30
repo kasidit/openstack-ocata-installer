@@ -704,6 +704,14 @@ $ sudo apt-get -y install chrony
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
 </pre>
+<p><p>
+<i><a id="installmysql"><h4>3.3 ติดตั้ง mysql </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+
+
+
 ต่อ.... soon
 
 <p><p>
