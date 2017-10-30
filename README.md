@@ -25,6 +25,15 @@ Thammasat University.
        <li> <a href="#testhorizon">2.4 ใช้งาน OpenStack Horizon</a>
       </ul>
  <li> 3. <a href="#part3">ติดตั้งด้วยมือ</a> 
+      <ul>
+       <li> <a href="#ubunupdate"><h4>3.1 update ubuntu บน ทุก node </h4></a>
+       <li> <a href="#setnicchrony"><h4>3.2 กำหนดค่า Network Interfaces และ Time Synchronization (chrony) </h4></a>
+       <li> <a href="#installmysql"><h4>3.3 ติดตั้ง mysql </h4></a>
+       <li> <a href="#installrabbitmq"><h4>3.4 ติดตั้ง rabbitmq </h4></a>
+       <li> <a href="#installkeystone"><h4>3.5 ติดตั้ง keystone </h4></a>
+       <li> <a href="#setendpoints"><h4>3.6 ติดตั้ง OpenStack Service Endpoint </h4></a>
+       <li> <a href="#installglance"><h4>3.7 ติดตั้ง glance </h4></a>
+      </ul>
 </ul>
 <p>
 <a id="part1"><h3>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h3></a>
