@@ -838,7 +838,7 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO '
 S sudo apt-get -y install keystone
 </pre>
 <pre>
-$ sudo cp files/keystone.conf /etc/keystone/keystone.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone.conf">files/keystone.conf</a> /etc/keystone/keystone.conf
 $ sudo su -s /bin/sh -c "keystone-manage db_sync" keystone
 $
 $ sudo keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
@@ -852,8 +852,7 @@ $ sudo keystone-manage bootstrap --bootstrap-password adminpassword \
 $
 </pre>
 <pre>
-S sudo cp files/apache2.conf /etc/apache2/apache2.conf
-$
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/apache2.conf">files/apache2.conf</a> /etc/apache2/apache2.conf
 $ sudo service apache2 restart
 $ sudo rm -f /var/lib/keystone/keystone.db
 </pre>
