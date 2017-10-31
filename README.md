@@ -923,6 +923,61 @@ $ openstack token issue
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
+สร้าง database สำหรับ glance
+<pre>
+$ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE glance;"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'GLANCE_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'GLANCE_DBPASS';"
+</pre>
+สร้าง endpoint สำหรับติดต่อ glance service
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack user create --domain default --password GLANCE_PASS glance
+$ openstack role add --project service --user glance admin
+$ openstack service create --name glance \
+  --description "OpenStack Image" image
+$
+$ openstack endpoint create --region RegionOne \
+  image public http://controller:9292
+$ openstack endpoint create --region RegionOne \
+  image internal http://controller:9292
+$ openstack endpoint create --region RegionOne \
+  image admin http://controller:9292
+$  
+</pre>
+ติดตั้ง glance-registry และ glance-api
+<pre>
+$ sudo apt-get -y install glance 
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน glance-api.conf และ glance-registry.conf </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-api.conf">files/glance-api.conf</a> /etc/glance/glance-api.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-registry.conf">files/glance-registry.conf</a> /etc/glance/glance-registry.conf
+$
+$ sudo su -s /bin/sh -c "glance-manage db_sync" glance
+$
+$ sudo service glance-registry restart
+$ sudo service glance-api restart
+</pre>
+ทดสอบ glance (upload cirros image เข้า glance)
+<pre>
+$ source ./admin-openrc.sh
+$ wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
+$
+$ openstack image create "cirros" \
+  --file cirros-0.3.5-x86_64-disk.img \
+  --disk-format qcow2 --container-format bare \
+  --public
+$
+$ openstack image list
+$ rm cirros-0.3.5-x86_64-disk.img
+</pre>
+<p><p>
+<i><a id="installglance"><h4>3.7 ติดตั้ง nova </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
 ต่อ.... soon
 
 <p><p>
