@@ -1105,7 +1105,11 @@ $ openstack catalog list
 $ openstack image list
 $ sudo nova-status upgrade check
 </pre>
-
+<p><p>
+<i><a id="installneutron"><h4>3.8 ติดตั้ง neutron </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
 ต่อ.... soon
 
 <p><p>
