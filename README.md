@@ -998,6 +998,8 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova.* TO 'nova
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' IDENTIFIED BY 'NOVA_DBPASS';"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'NOVA_DBPASS';"
 </pre>
+สร้าง nova service endpoint
+<p>
 <pre>
 $ source ./admin-openrc.sh
 $
@@ -1024,6 +1026,44 @@ $ openstack endpoint create --region RegionOne \
   placement admin http://controller:8778
 $
 </pre>
+ติดตั้ง nova software components ได้แก่ nova-api nova-conductor nova-consoleauth nova-novncproxy nova-scheduler nova-placement-api
+<p>
+<pre>
+$ sudo apt-get -y install nova-api nova-conductor nova-consoleauth \
+  nova-novncproxy nova-scheduler nova-placement-api
+$
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
+$
+$ sudo su -s /bin/sh -c "nova-manage api_db sync" nova
+$ sudo su -s /bin/sh -c "nova-manage cell_v2 map_cell0" nova
+$ sudo su -s /bin/sh -c "nova-manage cell_v2 create_cell --name=cell1 --verbose" nova
+$ sudo su -s /bin/sh -c "nova-manage db sync" nova
+$
+$ sudo nova-manage cell_v2 list_cells
+$
+$ sudo service nova-api restart
+$ sudo service nova-consoleauth restart
+$ sudo service nova-scheduler restart
+$ sudo service nova-conductor restart
+$ sudo service nova-novncproxy restart
+</pre>
+<p><p>
+<b>เครื่อง compute</b>
+<p><p>
+<pre>
+$ sudo apt-get -y install nova-compute
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf (บนเครื่อง compute)</td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
+$
+$ sudo service nova-compute restart
+</pre>
+
 ต่อ.... soon
 
 <p><p>
