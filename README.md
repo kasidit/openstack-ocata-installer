@@ -924,12 +924,14 @@ $ openstack token issue
 <b>เครื่อง controller</b>
 <p><p>
 สร้าง database สำหรับ glance
+<p>
 <pre>
 $ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE glance;"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'GLANCE_DBPASS';"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'GLANCE_DBPASS';"
 </pre>
 สร้าง endpoint สำหรับติดต่อ glance service
+<p>
 <pre>
 $ source ./admin-openrc.sh
 $
@@ -947,6 +949,7 @@ $ openstack endpoint create --region RegionOne \
 $  
 </pre>
 ติดตั้ง glance-registry และ glance-api
+<p>
 <pre>
 $ sudo apt-get -y install glance 
 </pre>
@@ -961,6 +964,7 @@ $ sudo service glance-registry restart
 $ sudo service glance-api restart
 </pre>
 ทดสอบ glance (upload cirros image เข้า glance)
+<p>
 <pre>
 $ source ./admin-openrc.sh
 $ wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
@@ -974,7 +978,7 @@ $ openstack image list
 $ rm cirros-0.3.5-x86_64-disk.img
 </pre>
 <p><p>
-<i><a id="installglance"><h4>3.7 ติดตั้ง nova </h4></a></i>
+<i><a id="installnova"><h4>3.8 ติดตั้ง nova </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
