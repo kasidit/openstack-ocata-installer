@@ -582,7 +582,7 @@ $ cd $HOME
 $ tar xvf controller-files.tar
 $ ls
 </pre>
-นศ จะเห็น directory "files" ใน openstack account บนเครื่อง controller
+ถ่ายโอนข้อมูลจาก directory network/files ไปที่เครื่อง network node
 <pre>
 $ cd $HOME/openstack-ocata-installer/OPSInstaller
 $ cd network 
@@ -591,7 +591,7 @@ $ scp network-files.tar openstack@10.0.10.21:/home/openstack/
 $ ssh openstack@10.0.10.21 tar xvf /home/openstack/network-files.tar
 $ ssh openstack@10.0.10.21 ls -l
 </pre>
-นศ จะเห็น directory "files" ใน openstack account บนเครื่อง network
+ถ่ายโอนข้อมูลจาก directory compute/files ไปที่เครื่อง compute node
 <pre>
 $ cd $HOME/openstack-ocata-installer/OPSInstaller
 $ cd compute 
@@ -600,7 +600,7 @@ $ scp compute-files.tar openstack@10.0.10.31:/home/openstack/
 $ ssh openstack@10.0.10.31 tar xvf /home/openstack/compute-files.tar
 $ ssh openstack@10.0.10.31 ls -l
 </pre>
-นศ จะเห็น directory "files" ใน openstack account บนเครื่อง compute
+ถ่ายโอนข้อมูลจาก directory compute1/files ไปที่เครื่อง compute1 node
 <pre>
 $ cd $HOME/openstack-ocata-installer/OPSInstaller
 $ cd compute1 
