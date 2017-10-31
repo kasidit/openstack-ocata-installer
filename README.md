@@ -33,6 +33,7 @@ Thammasat University.
        <li> <a href="#installkeystone">3.5 ติดตั้ง keystone </a>
        <li> <a href="#setendpoints">3.6 ติดตั้ง OpenStack Service Endpoint </a>
        <li> <a href="#installglance">3.7 ติดตั้ง glance </a>
+       <li> <a href="#installnova">3.8 ติดตั้ง nova</a>
       </ul>
 </ul>
 <p>
@@ -843,9 +844,12 @@ $ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE keystone;"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'KEYSTONE_DBPASS';"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'KEYSTONE_DBPASS';"
 </pre>
+ติดตั้ง keystone 
+<p>
 <pre>
 S sudo apt-get -y install keystone
 </pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน keystone.conf  </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone.conf">files/keystone.conf</a> /etc/keystone/keystone.conf
 $ sudo su -s /bin/sh -c "keystone-manage db_sync" keystone
@@ -860,6 +864,7 @@ $ sudo keystone-manage bootstrap --bootstrap-password adminpassword \
 --bootstrap-region-id RegionOne
 $
 </pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน apache2.conf  </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/apache2.conf">files/apache2.conf</a> /etc/apache2/apache2.conf
 $ sudo service apache2 restart
@@ -982,6 +987,8 @@ $ rm cirros-0.3.5-x86_64-disk.img
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
+<pre>
+</pre>
 ต่อ.... soon
 
 <p><p>
