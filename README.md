@@ -998,7 +998,32 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova.* TO 'nova
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' IDENTIFIED BY 'NOVA_DBPASS';"
 $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'NOVA_DBPASS';"
 </pre>
-
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack user create --domain default --password NOVA_PASS nova
+$ openstack role add --project service --user nova admin
+$ openstack service create --name nova \
+  --description "OpenStack Compute" compute
+$ openstack endpoint create --region RegionOne \
+  compute public http://controller:8774/v2.1/
+$ openstack endpoint create --region RegionOne \
+  compute internal http://controller:8774/v2.1/
+$ openstack endpoint create --region RegionOne \
+  compute admin http://controller:8774/v2.1/
+$
+$ openstack user create --domain default --password NOVA_PASS placement
+$ openstack role add --project service --user placement admin
+$ openstack service create --name placement \
+  --description "Placement API" placement
+$ openstack endpoint create --region RegionOne \
+  placement public http://controller:8778
+$ openstack endpoint create --region RegionOne \
+  placement internal http://controller:8778
+$ openstack endpoint create --region RegionOne \
+  placement admin http://controller:8778
+$
+</pre>
 ต่อ.... soon
 
 <p><p>
