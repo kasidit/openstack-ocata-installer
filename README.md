@@ -1056,12 +1056,54 @@ $ sudo service nova-novncproxy restart
 <pre>
 $ sudo apt-get -y install nova-compute
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf (บนเครื่อง compute)</td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
 $
 $ sudo service nova-compute restart
+</pre>
+<p><p>
+<b>เครื่อง compute1</b>
+<p><p>
+<pre>
+$ sudo apt-get -y install nova-compute
+$
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
+$
+$ sudo service nova-compute restart
+</pre>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+discovery หา compute nodes
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack hypervisor list
+$ sudo su -s /bin/sh -c "nova-manage cell_v2 discover_hosts --verbose" nova
+$
+$ openstack compute service list
+</pre>
+ลอง discovery ถ้ายังไม่เจอ compuet แบะ compute1
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack hypervisor list
+$ sudo su -s /bin/sh -c "nova-manage cell_v2 discover_hosts --verbose" nova
+</pre>
+แสดงรายการของ compute service 
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack compute service list
+$ openstack catalog list
+$ openstack image list
+$ sudo nova-status upgrade check
 </pre>
 
 ต่อ.... soon
