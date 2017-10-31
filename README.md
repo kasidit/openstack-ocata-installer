@@ -988,7 +988,17 @@ $ rm cirros-0.3.5-x86_64-disk.img
 <b>เครื่อง controller</b>
 <p><p>
 <pre>
+$ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE nova_api;"
+$ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE nova;"
+$ sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE nova_cell0;"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_api.* TO 'nova'@'localhost' IDENTIFIED BY 'NOVA_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_api.* TO 'nova'@'%' IDENTIFIED BY 'NOVA_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' IDENTIFIED BY 'NOVA_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' IDENTIFIED BY 'NOVA_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' IDENTIFIED BY 'NOVA_DBPASS';"
+$ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'NOVA_DBPASS';"
 </pre>
+
 ต่อ.... soon
 
 <p><p>
