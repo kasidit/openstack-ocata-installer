@@ -1144,9 +1144,9 @@ $
 </pre>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr></table>
 <pre>
-$ sudo cp files/neutron.conf /etc/neutron/neutron.conf
-$ sudo cp files/ml2_conf.ini /etc/neutron/plugins/ml2/ml2_conf.ini
-$ sudo cp files/nova-stage23.conf /etc/nova/nova.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/nova-stage23.conf">files/nova-stage23.conf</a> /etc/nova/nova.conf
 $
 $ sudo su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf \
   --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head" neutron
