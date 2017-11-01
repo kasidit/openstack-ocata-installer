@@ -1415,6 +1415,7 @@ $
 <p><p>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (32)
 ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" vm instance 2 เครื่อง (สมมุติว่าชื่อ cirros1 และ cirros2) บน selfservice1-v4 network และทำตามคำสั่งหรือตอบคำถามต่อไปนี้
+<p><p>
 <ul>
 <li> กำหนดค่า floating IP ให้กับ cirros vm เครื่องหนึ่ง (สมมุติว่าชื่อ cirros1)
 <li> ใช้ ssh จากเครื่อง controller เข้าสู่ floatinf IP นั้น
