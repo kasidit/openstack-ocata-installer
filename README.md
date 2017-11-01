@@ -1304,11 +1304,57 @@ $ sudo chown www-data:www-data /var/lib/openstack-dashboard/secret_key
 $ sudo service apache2 reload
 </pre>
 <p><p>
-<i><a id="setdvr"><h4>3.11 กำหนด neutron ให้เป็นแบบ Distributed Virtual Routers </h4></a></i>
+<i><a id="setdvr"><h4>3.11 เปลี่ยน neutron ให้เป็นแบบ Distributed Virtual Routers (DVR)</h4></a></i>
+<p><p>
+หลังจาก install neutron นศ จะได้ neutron ที่ทำงาน classic openvswitch การกำหนดค่า configuration ต่อไปนี้จะเปลี่ยน neutron ให้เป็นแบบ DVR
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron_stage33.conf">files/neutron_stage33.conf</a> /etc/neutron/neutron.conf
+$ sudo service neutron-server restart
+</pre>
+<p><p>
+<b>เครื่อง network</b>
+<p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent_stage34.ini">files/openvswitch_agent_stage34.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent_stage34.ini">files/l3_agent_stage34.ini</a> /etc/neutron/l3_agent.ini
+$
+$ sudo service openvswitch-switch restart
+$ sudo service neutron-openvswitch-agent restart
+$ sudo service neutron-l3-agent restart
+</pre>
+<p><p>
+<b>เครื่อง compute</b>
+<p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<pre>
+$ sudo apt-get -y install neutron-l3-agent 
+$
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/openvswitch_agent_stage35.ini">files/openvswitch_agent_stage35.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/l3_agent_stage35.ini">files/l3_agent_stage35.ini</a> /etc/neutron/l3_agent.ini
+$
+$ sudo service openvswitch-switch restart
+$ sudo service neutron-openvswitch-agent restart
+$ sudo service neutron-l3-agent restart
+</pre>
+<p><p>
+<b>เครื่อง compute1</b>
+<p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<pre>
+$ sudo apt-get -y install neutron-l3-agent 
+$
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/openvswitch_agent_stage35.ini">files/openvswitch_agent_stage35.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/l3_agent_stage35.ini">files/l3_agent_stage35.ini</a> /etc/neutron/l3_agent.ini
+$
+$ sudo service openvswitch-switch restart
+$ sudo service neutron-openvswitch-agent restart
+$ sudo service neutron-l3-agent restart
+</pre>
 ต่อ.... soon
 
 <p><p>
