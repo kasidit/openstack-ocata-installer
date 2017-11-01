@@ -35,6 +35,8 @@ Thammasat University.
        <li> <a href="#installglance">3.7 ติดตั้ง glance </a>
        <li> <a href="#installnova">3.8 ติดตั้ง nova</a>
        <li> <a href="#installneutron">3.9 ติดตั้ง neutron </a>
+       <li> <a href="#installhorizon">3.10 ติดตั้ง horizon </a>
+       <li> <a href="#setdvr">3.11 กำหนด neutron ให้เป็นแบบ Distributed Virtual Routers </a>
       </ul>
 </ul>
 <p>
@@ -1276,6 +1278,37 @@ $ sudo service neutron-openvswitch-agent restart
 $ sudo service neutron-metadata-agent restart
 $ sudo service neutron-dhcp-agent restart
 </pre>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+<pre>
+$ source ./admin-openrc.sh
+$ openstack extension list --network
+</pre>
+<p><p>
+<i><a id="installhorizon"><h4>3.10 ติดตั้ง horizon </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+ถ้าเครื่องที่ นศ ติดตั้งมี RAM น้อยหรือ CPU ไม่แรง ผมแนะนำให้ไม่ต้องติดตั้ง horizon และใช้ OpenStack CLI เป็นหลัก 
+<p>
+<pre>
+$ sudo apt-get -y install openstack-dashboard
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน local_setting.py </td></tr></table>
+<p><pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local_settings.py">files/local_settings.py</a> /etc/openstack-dashboard/local_settings.py
+$ sudo service apache2 reload
+$
+$ sudo chown www-data:www-data /var/lib/openstack-dashboard/secret_key
+$ sudo service apache2 reload
+</pre>
+<p><p>
+<i><a id="setdvr"><h4>3.11 กำหนด neutron ให้เป็นแบบ Distributed Virtual Routers </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+
 ต่อ.... soon
 
 <p><p>
