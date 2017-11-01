@@ -1154,6 +1154,44 @@ $
 $ sudo service nova-api restart
 $ sudo service neutron-server restart
 </pre>
+ทดสอบ neutron ขั้นแรก
+<p>
+<pre>
+$ source ./admin-openrc.sh
+$ openstack extension list --network
+</pre>
+<p><p>
+<b>เครื่อง network</b>
+<p><p>
+<pre>
+$ sudo apt-get -y install neutron-plugin-ml2 neutron-l3-agent 
+$ sudo apt-get -y install neutron-openvswitch-agent openvswitch-switch
+$
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
+$
+$ sudo service openvswitch-switch start
+</pre>
+สร้าง provider network และ vlan network 
+<p>
+<pre>
+$ sudo ovs-vsctl add-br br-provider
+$ sudo ovs-vsctl add-port br-provider ens6
+$ sudo ovs-vsctl add-br br-vlan
+$ sudo ovs-vsctl add-port br-vlan ens5
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent.ini">files/openvswitch_agent.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent.ini">files/l3_agent.ini</a> /etc/neutron/l3_agent.ini
+$
+$ sudo service openvswitch-switch restart
+$ sudo service neutron-openvswitch-agent restart
+$ sudo service neutron-l3-agent restart
+</pre>
 ต่อ.... soon
 
 <p><p>
