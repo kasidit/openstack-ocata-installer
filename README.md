@@ -37,6 +37,8 @@ Thammasat University.
        <li> <a href="#installneutron">3.9 ติดตั้ง neutron </a>
        <li> <a href="#installhorizon">3.10 ติดตั้ง horizon </a>
        <li> <a href="#setdvr">3.11 กำหนด neutron ให้เป็นแบบ Distributed Virtual Routers </a>
+       <li> <a href="#testnetwork">3.12 สร้าง network เริ่มต้น</a>
+       <li> <a href="#testopenstack">3.13 ทดสอบ OpenStack</a>
       </ul>
 </ul>
 <p>
@@ -1348,15 +1350,65 @@ $ sudo service neutron-l3-agent restart
 <pre>
 $ sudo apt-get -y install neutron-l3-agent 
 $
-$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/openvswitch_agent_stage35.ini">files/openvswitch_agent_stage35.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
-$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/l3_agent_stage35.ini">files/l3_agent_stage35.ini</a> /etc/neutron/l3_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/openvswitch_agent_stage36.ini">files/openvswitch_agent_stage36.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/l3_agent_stage36.ini">files/l3_agent_stage36.ini</a> /etc/neutron/l3_agent.ini
 $
 $ sudo service openvswitch-switch restart
 $ sudo service neutron-openvswitch-agent restart
 $ sudo service neutron-l3-agent restart
 </pre>
-ต่อ.... soon
-
+<p><p>
+<i><a id="testnetwork"><h4>3.12 สร้าง network เริ่มต้น </h4></a></i>
+<p><p>
+<b>เครื่อง controller</b>
+<p><p>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ขอให้ นศ อธิบายความหมายของ CLI ข้างล่าง </td></tr></table>
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack network create --share --provider-physical-network provider \
+ --provider-network-type flat provider1
+$
+$ openstack subnet create --subnet-range 10.0.10.0/24 --gateway 10.0.10.11 \
+ --network provider1 --allocation-pool start=10.0.10.100,end=10.0.10.200 \
+ --dns-nameserver 8.8.4.4 provider1-v4
+$
+$ openstack security group rule create --proto icmp default
+$
+$ openstack security group rule create --proto tcp --dst-port 22 default
+$
+$ openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano
+$
+$ openstack flavor create --id 1 --vcpus 1 --ram 512 --disk 1 m1.mini
+$
+$ ping -c 4 10.0.10.100
+</pre>
+หลังจากรันคำสั่ง ping คำสั่งนี้ควรจะทำให้ นศ ping 10.0.10.100 ได้ ถ้าไม่ได้แสดงว่าการติดตั้ง neutron ผิดพลาด
+<p><p>
+ถ้าผ่านการ ping มาได้อันดับถัดไปจะให้ นศ สร้าง network สำหรับ admin user
+<pre>
+$ openstack network set --external provider1
+$
+$ openstack network create selfservice1
+$
+$ openstack subnet create --subnet-range 192.0.2.0/24 \
+  --network selfservice1 --dns-nameserver 8.8.4.4 selfservice1-v4
+$
+$ openstack router create router1
+$
+$ openstack router add subnet router1 selfservice1-v4
+$
+$ openstack router set router1 --external-gateway provider1
+$
+$ openstack floating ip create provider1
+$
+</pre>
+<p><p>
+<i><a id="testopenstack"><h4>3.13 ทดสอบ OpenStack</h4></a></i>
+<p><p>
+ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" virtual machine instance และทดสอบว่ามันสามารถทำสิ่งต่อไปนี้ได้
+<p><p>
+ต่อ..... soon
 <p><p>
 <h3>อ้างอิง</h3>
 <p><p>
