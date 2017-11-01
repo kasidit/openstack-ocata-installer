@@ -1413,7 +1413,8 @@ $
 <p><p>
 <i><a id="testopenstack"><h4>3.13 ทดสอบ OpenStack</h4></a></i>
 <p><p>
-ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" vm instance 2 เครื่อง (สมมุติว่าชื่อ cirros1 และ cirros2) บน selfservice1-v4 network และทำต่อไปนี้ได้
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (32)
+ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" vm instance 2 เครื่อง (สมมุติว่าชื่อ cirros1 และ cirros2) บน selfservice1-v4 network และทำตามคำสั่งหรือตอบคำถามต่อไปนี้
 <ul>
 <li> กำหนดค่า floating IP ให้กับ cirros vm เครื่องหนึ่ง (สมมุติว่าชื่อ cirros1)
 <li> ใช้ ssh จากเครื่อง controller เข้าสู่ floatinf IP นั้น
@@ -1430,6 +1431,7 @@ $
 <li> ให้ลอง ping google.com ทำได้หรือไม่ เพราะอะไร 
 </ul>
 ดูตัวอย่างได้ที่ <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&t=1484s">youtube video ทดสอบ OpenStack</a>
+</td></tr></table>
 <p><p>
 <p><p>
 <h3>อ้างอิง</h3>
