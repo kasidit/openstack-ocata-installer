@@ -1204,31 +1204,41 @@ $ openstack extension list --network
 <b>เครื่อง compute</b>
 <p><p>
 <pre>
-sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
-sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
-
-sudo cp files/neutron.conf /etc/neutron/neutron.conf
-sudo cp files/ml2_conf.ini /etc/neutron/plugins/ml2/ml2_conf.ini
-sudo cp files/openvswitch_agent.ini /etc/neutron/plugins/ml2/openvswitch_agent.ini
-sudo cp files/dhcp_agent.ini /etc/neutron/dhcp_agent.ini
-sudo cp files/metadata_agent.ini /etc/neutron/metadata_agent.ini
-
-sudo service openvswitch-switch start
-sudo ovs-vsctl add-br br-provider
-sudo ovs-vsctl add-port br-provider ens6
-sudo ovs-vsctl add-br br-vlan
-sudo ovs-vsctl add-port br-vlan ens5
-
-sudo service openvswitch-switch restart
-
-sudo cp files/nova-stage29.conf /etc/nova/nova.conf
-
-sudo service nova-compute restart
-sudo service openvswitch-switch restart
-sudo service neutron-openvswitch-agent restart
-sudo service neutron-metadata-agent restart
-sudo service neutron-dhcp-agent restart
+$ sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
+$ sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
 </pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/openvswitch_agent.ini">files/openvswitch_agent.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/dhcp_agent.ini">files/dhcp_agent.ini</a> /etc/neutron/dhcp_agent.ini
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/metadata_agent.ini">files/metadata_agent.ini</a> /etc/neutron/metadata_agent.ini
+$
+$ sudo service openvswitch-switch start
+$
+</pre>
+สร้าง provide bridge และ vlan bridge บน compute node
+<pre>
+$ sudo ovs-vsctl add-br br-provider
+$ sudo ovs-vsctl add-port br-provider ens6
+$ sudo ovs-vsctl add-br br-vlan
+$ sudo ovs-vsctl add-port br-vlan ens5
+$ 
+$ sudo service openvswitch-switch restart
+$
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<pre>
+$ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-stage29.conf">files/nova-stage29.conf</a> /etc/nova/nova.conf
+$
+$ sudo service nova-compute restart
+$ sudo service openvswitch-switch restart
+$ sudo service neutron-openvswitch-agent restart
+$ sudo service neutron-metadata-agent restart
+$ sudo service neutron-dhcp-agent restart
+</pre>
+
 ต่อ.... soon
 
 <p><p>
