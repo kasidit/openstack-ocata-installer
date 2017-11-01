@@ -716,7 +716,7 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -724,7 +724,7 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/interfaces">files/interfaces</a> /etc/network/interfaces
 </pre>
@@ -741,7 +741,7 @@ $ ifconfig
 $
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (3) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -749,7 +749,7 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง compute</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (4) ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/interfaces">files/interfaces</a> /etc/network/interfaces
 $ sudo ifdown ens3
@@ -763,7 +763,7 @@ $ sudo ifup ens6
 $ 
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (5) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -771,7 +771,7 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (6) ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/interfaces">files/interfaces</a> /etc/network/interfaces
 $ sudo ifdown ens3
@@ -785,7 +785,7 @@ $ sudo ifup ens6
 $ 
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (7) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -800,7 +800,7 @@ $ sudo chronyc sources
 $ sudo apt-get -y install mariadb-server
 $ sudo apt-get -y install python-pymysql
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () นศ ต้องกำหนดค่าอะไรบ้างในไฟล์  99-openstack.cnf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (8) นศ ต้องกำหนดค่าอะไรบ้างในไฟล์  99-openstack.cnf </td></tr></table>
 <pre>
 cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/99-openstack.cnf">files/99-openstack.cnf</a> /etc/mysql/mariadb.conf.d/99-openstack.cnf
 service mysql restart
@@ -818,7 +818,7 @@ mysql_secure_installation
 <pre>
 $ sudo chronyc sources
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ผลการรัน chronyc ต่างจากบนเครื่อง controller อย่างไร </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (9) ผลการรัน chronyc ต่างจากบนเครื่อง controller อย่างไร </td></tr></table>
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
@@ -838,7 +838,7 @@ $ sudo rabbitmqctl set_permissions openstack ".*" ".*" ".*"
 $
 $ sudo apt-get install memcached python-memcache
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (10) memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr></table>
 </pre>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/memcached.conf">files/memcached.conf</a> /etc/memcached.conf
@@ -860,7 +860,7 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO '
 <pre>
 S sudo apt-get -y install keystone
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน keystone.conf  </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (11) มีการกำหนดค่าอะไรใน keystone.conf  </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone.conf">files/keystone.conf</a> /etc/keystone/keystone.conf
 $ sudo su -s /bin/sh -c "keystone-manage db_sync" keystone
@@ -875,7 +875,7 @@ $ sudo keystone-manage bootstrap --bootstrap-password adminpassword \
 --bootstrap-region-id RegionOne
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน apache2.conf  </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (12) มีการกำหนดค่าอะไรใน apache2.conf  </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/apache2.conf">files/apache2.conf</a> /etc/apache2/apache2.conf
 $ sudo service apache2 restart
@@ -908,7 +908,7 @@ $ openstack role create user
 $ openstack role add --project demo --user demo user
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน keystone-paste.conf (คำถามนี้อาจถูกลบออกเนื่องจากบรรทัดถัดไปอาจ Deprecate)</td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (13) มีการกำหนดค่าอะไรใน keystone-paste.conf (คำถามนี้อาจถูกลบออกเนื่องจากบรรทัดถัดไปอาจ Deprecate)</td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone-paste.ini">files/keystone-paste.ini</a> /etc/keystone/keystone-paste.ini
 $
@@ -969,7 +969,7 @@ $
 <pre>
 $ sudo apt-get -y install glance 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน glance-api.conf และ glance-registry.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (14) มีการกำหนดค่าอะไรใน glance-api.conf และ glance-registry.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-api.conf">files/glance-api.conf</a> /etc/glance/glance-api.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-registry.conf">files/glance-registry.conf</a> /etc/glance/glance-registry.conf
@@ -1044,7 +1044,7 @@ $ sudo apt-get -y install nova-api nova-conductor nova-consoleauth \
   nova-novncproxy nova-scheduler nova-placement-api
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (15) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $
@@ -1067,7 +1067,7 @@ $ sudo service nova-novncproxy restart
 <pre>
 $ sudo apt-get -y install nova-compute
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (16) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
@@ -1081,7 +1081,7 @@ $ sudo service nova-compute restart
 $ sudo apt-get -y install nova-compute
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (17) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
@@ -1152,7 +1152,7 @@ $ sudo apt-get -y install neutron-server neutron-plugin-ml2 python-neutronclient
 $ sudo apt-get -y install openvswitch-switch
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (18) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1178,7 +1178,7 @@ $ sudo apt-get -y install neutron-plugin-ml2 neutron-l3-agent
 $ sudo apt-get -y install neutron-openvswitch-agent openvswitch-switch
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (19) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1193,7 +1193,7 @@ $ sudo ovs-vsctl add-port br-provider ens6
 $ sudo ovs-vsctl add-br br-vlan
 $ sudo ovs-vsctl add-port br-vlan ens5
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (20) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent.ini">files/openvswitch_agent.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent.ini">files/l3_agent.ini</a> /etc/neutron/l3_agent.ini
@@ -1217,7 +1217,7 @@ $ openstack extension list --network
 $ sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
 $ sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (21) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1238,7 +1238,7 @@ $
 $ sudo service openvswitch-switch restart
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (22) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-stage29.conf">files/nova-stage29.conf</a> /etc/nova/nova.conf
 $
@@ -1255,7 +1255,7 @@ $ sudo service neutron-dhcp-agent restart
 $ sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
 $ sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (23) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1276,7 +1276,7 @@ $
 $ sudo service openvswitch-switch restart
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (24) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova-stage29.conf">files/nova-stage29.conf</a> /etc/nova/nova.conf
 $
@@ -1303,7 +1303,7 @@ $ openstack extension list --network
 <pre>
 $ sudo apt-get -y install openstack-dashboard
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน local_setting.py </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (25) มีการกำหนดค่าอะไรใน local_setting.py </td></tr></table>
 <p><pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local_settings.py">files/local_settings.py</a> /etc/openstack-dashboard/local_settings.py
 $ sudo service apache2 reload
@@ -1318,7 +1318,7 @@ $ sudo service apache2 reload
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (26) มีการกำหนดค่าอะไรใน neutron.conf </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron_stage33.conf">files/neutron_stage33.conf</a> /etc/neutron/neutron.conf
 $ sudo service neutron-server restart
@@ -1326,7 +1326,7 @@ $ sudo service neutron-server restart
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (27) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent_stage34.ini">files/openvswitch_agent_stage34.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent_stage34.ini">files/l3_agent_stage34.ini</a> /etc/neutron/l3_agent.ini
@@ -1338,7 +1338,7 @@ $ sudo service neutron-l3-agent restart
 <p><p>
 <b>เครื่อง compute</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (28) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
 <pre>
 $ sudo apt-get -y install neutron-l3-agent 
 $
@@ -1352,7 +1352,7 @@ $ sudo service neutron-l3-agent restart
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (29) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
 <pre>
 $ sudo apt-get -y install neutron-l3-agent 
 $
@@ -1368,7 +1368,7 @@ $ sudo service neutron-l3-agent restart
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () ขอให้ นศ อธิบายความหมายของ CLI ข้างล่าง </td></tr></table>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (30) ขอให้ นศ อธิบายความหมายของ CLI ข้างล่าง </td></tr></table>
 <pre>
 $ source ./admin-openrc.sh
 $
@@ -1392,6 +1392,7 @@ $ ping -c 4 10.0.10.100
 หลังจากรันคำสั่ง ping คำสั่งนี้ควรจะทำให้ นศ ping 10.0.10.100 ได้ ถ้าไม่ได้แสดงว่าการติดตั้ง neutron ผิดพลาด
 <p><p>
 ถ้าผ่านการ ping มาได้อันดับถัดไปจะให้ นศ สร้าง network สำหรับ admin user
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (31) ขอให้ นศ อธิบายความหมายของ CLI ข้างล่าง </td></tr></table>
 <pre>
 $ openstack network set --external provider1
 $
@@ -1412,12 +1413,28 @@ $
 <p><p>
 <i><a id="testopenstack"><h4>3.13 ทดสอบ OpenStack</h4></a></i>
 <p><p>
-ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" virtual machine instance และทดสอบว่ามันสามารถทำสิ่งต่อไปนี้ได้
+ในอันดับถัดไป นศ จะต้องใช้ horizon เข้าไปสร้าง "cirros" vm instance 2 เครื่อง (สมมุติว่าชื่อ cirros1 และ cirros2) บน selfservice1-v4 network และทำต่อไปนี้ได้
+<ul>
+<li> กำหนดค่า floating IP ให้กับ cirros vm เครื่องหนึ่ง (สมมุติว่าชื่อ cirros1)
+<li> ใช้ ssh จากเครื่อง controller เข้าสู่ floatinf IP นั้น
+<li> หลังจาก login เข้า cirros1 แล้วให้ ping www.google.com
+<li> ให้ใช้ ifconfig ดูว่าลักษณะของ network interface เป็นอย่างไร มีค่า MTU เท่าไรแตกต่างจากบนเครื่อง controller network compute และ compute1 หรือไม่ และทำไมถึงเกิดความแตกต่างขึ้น
+<li> ให้ นศ ssh จาก cirros1 ไปยัง cirros2 
+<li> จาก cirros2 ให้ ping www.google.com ทำได้หรือไม่
+<li> ให้ poweroff เครื่อง network node 
+<li> จากเครื่อง cirros2  นศ ping google.com ได้หรือไม่
+<li> ให้ exit จาก cirros2 กลับมาที่ cirros1 
+<li> ให้ลอง ping google.com ทำได้หรือไม่ เพราะอะไร 
+<li> ให้ boot เครื่อง network node อีกครั้งหนึ่ง
+<li> ให้ลอง ssh จาก cirros1 ไปยัง cirros2 อีกครั้ง 
+<li> ให้ลอง ping google.com ทำได้หรือไม่ เพราะอะไร 
+</ul>
+ดูตัวอย่างได้ที่ <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ&t=1484s">youtube video ทดสอบ OpenStack</a>
 <p><p>
-ต่อ..... soon
 <p><p>
 <h3>อ้างอิง</h3>
 <p><p>
 [1] http://docs.openstack.org/ <br>
 [2] https://docs.openstack.org/ocata/install/ubuntu-services.html <br>
 [3] https://docs.openstack.org/ocata/networking-guide/ <br>
+[4] <a href="https://www.youtube.com/playlist?list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">OpenStack ocata installation youtube video playlist</a>
