@@ -34,6 +34,7 @@ Thammasat University.
        <li> <a href="#setendpoints">3.6 ติดตั้ง OpenStack Service Endpoint </a>
        <li> <a href="#installglance">3.7 ติดตั้ง glance </a>
        <li> <a href="#installnova">3.8 ติดตั้ง nova</a>
+       <li> <a href="#installneutron">3.9 ติดตั้ง neutron </a>
       </ul>
 </ul>
 <p>
@@ -1106,10 +1107,53 @@ $ openstack image list
 $ sudo nova-status upgrade check
 </pre>
 <p><p>
-<i><a id="installneutron"><h4>3.8 ติดตั้ง neutron </h4></a></i>
+<i><a id="installneutron"><h4>3.9 ติดตั้ง neutron </h4></a></i>
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
+สร้าง database สำหรับ neutron
+<p>
+<pre>
+sudo mysql -u root -pmysqlpassword -e "CREATE DATABASE neutron;"
+sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'localhost' IDENTIFIED BY 'NEUTRON_DBPASS';"
+sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'%' IDENTIFIED BY 'NEUTRON_DBPASS';"
+</pre>
+สร้าง service endpoints สำหรับ neutron
+<p>
+<pre>
+$ source ./admin-openrc.sh
+$
+$ openstack user create --domain default --password NEUTRON_PASS neutron
+$ openstack role add --project service --user neutron admin
+$ openstack service create --name neutron \
+  --description "OpenStack Networking" network
+$ openstack endpoint create --region RegionOne \
+  network public http://controller:9696
+$ openstack endpoint create --region RegionOne \
+  network internal http://controller:9696
+$ openstack endpoint create --region RegionOne \
+  network admin http://controller:9696
+$
+</pre>
+ติดตั้ง neutron-server neutron-plugin-ml2 python-neutronclient และ openvswitch-switch
+<p>
+<pre>
+$ sudo apt-get -y install neutron-server neutron-plugin-ml2 python-neutronclient
+$ sudo apt-get -y install openvswitch-switch
+$
+</pre>
+<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: () มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr></table>
+<pre>
+$ sudo cp files/neutron.conf /etc/neutron/neutron.conf
+$ sudo cp files/ml2_conf.ini /etc/neutron/plugins/ml2/ml2_conf.ini
+$ sudo cp files/nova-stage23.conf /etc/nova/nova.conf
+$
+$ sudo su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf \
+  --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head" neutron
+$
+$ sudo service nova-api restart
+$ sudo service neutron-server restart
+</pre>
 ต่อ.... soon
 
 <p><p>
