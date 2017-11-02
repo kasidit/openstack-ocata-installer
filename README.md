@@ -536,7 +536,7 @@ $ ./OS-installer-10-initial-user-network.sh
 <i><a id="testhorizon"><h4>2.4 ใช้งาน OpenStack Horizon</h4></a></i>
 <p>
 <p>
-ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:8088/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
+ในกรณีที่ติดตั้งบนเครื่องจริง นศ ควรจะเข้าใช้ web interface ของ openstack ได้ที่ http://10.0.10.11:80/horizon/ (ดู <a href="https://www.youtube.com/watch?v=uXjlmfOvFCs&index=10&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">youtube video</a>)
 <p>
 <table>
 <tr><td>
@@ -1163,7 +1163,10 @@ $ sudo apt-get -y install neutron-server neutron-plugin-ml2 python-neutronclient
 $ sudo apt-get -y install openvswitch-switch
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (18) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (18) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini nova.conf </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1189,7 +1192,10 @@ $ sudo apt-get -y install neutron-plugin-ml2 neutron-l3-agent
 $ sudo apt-get -y install neutron-openvswitch-agent openvswitch-switch
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (19) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (19) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1204,7 +1210,10 @@ $ sudo ovs-vsctl add-port br-provider ens6
 $ sudo ovs-vsctl add-br br-vlan
 $ sudo ovs-vsctl add-port br-vlan ens5
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (20) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (20) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent.ini">files/openvswitch_agent.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent.ini">files/l3_agent.ini</a> /etc/neutron/l3_agent.ini
@@ -1228,7 +1237,10 @@ $ openstack extension list --network
 $ sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
 $ sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (21) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (21) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1249,7 +1261,10 @@ $
 $ sudo service openvswitch-switch restart
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (22) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (22) มีการกำหนดค่าอะไรใน nova.conf </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-stage29.conf">files/nova-stage29.conf</a> /etc/nova/nova.conf
 $
@@ -1266,7 +1281,10 @@ $ sudo service neutron-dhcp-agent restart
 $ sudo apt-get -y install neutron-plugin-ml2 neutron-openvswitch-agent openvswitch-switch 
 $ sudo apt-get -y install neutron-dhcp-agent neutron-metadata-agent 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (23) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (23) มีการกำหนดค่าอะไรใน neutron.conf ml2_conf.ini openvswitch_agent.ini dhcp_agent.ini metadata_agent.ini </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/neutron.conf">files/neutron.conf</a> /etc/neutron/neutron.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/ml2_conf.ini">files/ml2_conf.ini</a> /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -1287,7 +1305,10 @@ $
 $ sudo service openvswitch-switch restart
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (24) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (24) มีการกำหนดค่าอะไรใน nova.conf </td></tr>
+<tr><td>Hint: <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/neutron.html">Neutron Basic Install</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs.html">Neutron OVS Mechanisms</a>,<a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-provider.html">Neutron OVS provider</a>, <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-selfservice.html">Neutron OVS Self-service</a>  </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova-stage29.conf">files/nova-stage29.conf</a> /etc/nova/nova.conf
 $
@@ -1314,7 +1335,9 @@ $ openstack extension list --network
 <pre>
 $ sudo apt-get -y install openstack-dashboard
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (25) มีการกำหนดค่าอะไรใน local_setting.py </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (25) มีการกำหนดค่าอะไรใน local_setting.py </td></tr>
+</table>
 <p><pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local_settings.py">files/local_settings.py</a> /etc/openstack-dashboard/local_settings.py
 $ sudo service apache2 reload
