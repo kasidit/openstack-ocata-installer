@@ -2,6 +2,7 @@
 
 Copyright 2017 Kasidit Chanchio 
 
+Author: กษิดิศ ชาญเชี่ยว <br>
 Contact: kasiditchanchio@gmail.com <br>
 Department of computer science <br>
 Faculty of science and technology <br>
@@ -42,6 +43,9 @@ Thammasat University.
       </ul>
  <li><a href="#part4">ส่วนที่ 4: สรุป</a>
 </ul>
+<table>
+<tr><td><b>แจ้งปัญหาหรือข้อผิดพลาด:</b> หากมีส่วนใดของเเนื้อหาใน web นี้ที่เป็น BUGS หรือมีข้อแนะนำขอให้แจ้งได้ที่ kasiditchanchio@gmail.com นะครับ ขอบคุณครับ </td></tr>
+</table>
 <p>
 <a id="part1"><h3>ส่วนที่ 1: เตรียมเครื่องและเนตสำหรับติดตั้ง</h3></a>
 <p><p>
