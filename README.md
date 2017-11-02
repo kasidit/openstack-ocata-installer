@@ -723,6 +723,8 @@ $ sudo apt-get -y install chrony
 </table> 
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
+$ # optional 
+$ 
 $ sudo service chrony restart
 </pre>
 <p><p>
