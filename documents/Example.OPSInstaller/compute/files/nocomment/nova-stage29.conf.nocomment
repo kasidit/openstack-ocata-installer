@@ -99,8 +99,8 @@ password = NOVA_PASS
 enabled = true
 vncserver_listen = $my_ip
 vncserver_proxyclient_address = $my_ip
-novncproxy_base_url=http://10.0.0.11:6080/vnc_auto.html
-novncproxy_host=10.0.0.11
+novncproxy_base_url=http://10.0.10.11:6080/vnc_auto.html
+novncproxy_host=10.0.10.11
 novncproxy_port=6080
 [workarounds]
 [wsgi]

@@ -12,7 +12,7 @@ iface ens3 inet static
 	netmask 255.255.255.0
 	network 10.0.10.0
 	broadcast 10.0.10.255
-	gateway 10.0.10.11
+	gateway 10.0.10.1
 	# dns-* options are implemented by the resolvconf package, if installed
 	dns-nameservers 8.8.8.8
 	dns-search cs.tu.ac.th

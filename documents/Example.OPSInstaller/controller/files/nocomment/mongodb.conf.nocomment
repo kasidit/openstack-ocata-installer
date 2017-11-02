@@ -1,6 +1,6 @@
 dbpath=/var/lib/mongodb
 logpath=/var/log/mongodb/mongodb.log
 logappend=true
-bind_ip = 10.0.0.11
+bind_ip = 10.0.10.11
 journal=true
 smallfiles = true
