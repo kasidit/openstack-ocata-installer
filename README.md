@@ -495,7 +495,7 @@ $ ./OS-installer-02-mysql.sh
 ขอให้ นศ จำรหัสผ่านสำหรับ root ของ mysql ที่กำหนดไว้ใน install-paramrc.sh ด้วย (ในที่นี้คือ "mysqlpassword") ระหว่างที่รัน script นี้ นศ จะต้องระวังและป้อนค่าตามที่ script ต้องการดังนี้
 <ul>
 <li> หลังจากติดตั้ง mysql แล้ว script จะให้ป้อนค่า root password ซึ่งไม่มีเพราะเป็นการติดตั้งใหม่ ดังนั้น นศ ต้อง กด <b>ENTER</b>
-<li> ถัดจากนั้นมันจะให้ป้อน password สองครั้ง
+<li> ถัดจากนั้นมันจะให้ป้อน password (<b>mysqlpassword</b>) สองครั้ง
 <li> คำถามที่เหลือตอบ y ให้หมด 
 </ul>
 <p><p>
