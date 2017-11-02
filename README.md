@@ -796,7 +796,10 @@ $ sudo ifup ens6
 $ 
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (7) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (7) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-other.html">Network Time Protocol on controller</a>, <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-verify.html">Verify</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -811,7 +814,10 @@ $ sudo chronyc sources
 $ sudo apt-get -y install mariadb-server
 $ sudo apt-get -y install python-pymysql
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (8) นศ ต้องกำหนดค่าอะไรบ้างในไฟล์  99-openstack.cnf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (8) นศ ต้องกำหนดค่าอะไรบ้างในไฟล์  99-openstack.cnf </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-sql-database.html">Install/config mysql</a></td></tr>
+</table>
 <pre>
 cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/99-openstack.cnf">files/99-openstack.cnf</a> /etc/mysql/mariadb.conf.d/99-openstack.cnf
 service mysql restart
@@ -829,7 +835,10 @@ mysql_secure_installation
 <pre>
 $ sudo chronyc sources
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (9) ผลการรัน chronyc ต่างจากบนเครื่อง controller อย่างไร </td></tr></table>
+<table>
+ <tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (9) ผลการรัน chronyc ต่างจากบนเครื่อง controller อย่างไร </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-verify.html">Verify</a></td></tr>
+</table>
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
@@ -849,7 +858,10 @@ $ sudo rabbitmqctl set_permissions openstack ".*" ".*" ".*"
 $
 $ sudo apt-get install memcached python-memcache
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (10) memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (10) memcache คืออะไร มีการกำหนดค่าอะไรใน memcached.conf </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-messaging.html">RabbitMQ</a>, <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-memcached.html">Memcache</a></td></tr>
+</table>
 </pre>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/memcached.conf">files/memcached.conf</a> /etc/memcached.conf
@@ -871,7 +883,10 @@ $ sudo mysql -u root -pmysqlpassword -e "GRANT ALL PRIVILEGES ON keystone.* TO '
 <pre>
 S sudo apt-get -y install keystone
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (11) มีการกำหนดค่าอะไรใน keystone.conf  </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (11) มีการกำหนดค่าอะไรใน keystone.conf  </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/keystone.html">Install Keystone</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone.conf">files/keystone.conf</a> /etc/keystone/keystone.conf
 $ sudo su -s /bin/sh -c "keystone-manage db_sync" keystone
@@ -886,7 +901,11 @@ $ sudo keystone-manage bootstrap --bootstrap-password adminpassword \
 --bootstrap-region-id RegionOne
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (12) มีการกำหนดค่าอะไรใน apache2.conf  </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (12) มีการกำหนดค่าอะไรใน apache2.conf  </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/keystone.html">Install Keystone</a></td></tr>
+</table>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/apache2.conf">files/apache2.conf</a> /etc/apache2/apache2.conf
 $ sudo service apache2 restart
@@ -919,7 +938,11 @@ $ openstack role create user
 $ openstack role add --project demo --user demo user
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (13) มีการกำหนดค่าอะไรใน keystone-paste.conf (คำถามนี้อาจถูกลบออกเนื่องจากบรรทัดถัดไปอาจ Deprecate)</td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (13) มีการกำหนดค่าอะไรใน keystone-paste.conf (คำถามนี้อาจถูกลบออกเนื่องจากบรรทัดถัดไปอาจ Deprecate)</td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/keystone-verify.html">Verify Keystone</a></td></tr>
+</table>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/keystone-paste.ini">files/keystone-paste.ini</a> /etc/keystone/keystone-paste.ini
 $
