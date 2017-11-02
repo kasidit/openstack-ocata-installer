@@ -1318,7 +1318,10 @@ $ sudo service apache2 reload
 <p><p>
 <b>เครื่อง controller</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (26) มีการกำหนดค่าอะไรใน neutron.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (26) มีการกำหนดค่าอะไรใน neutron.conf </td></tr>
+<tr><td>Hint: See <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-ha-dvr.html#deploy-ovs-ha-dvr">Openvswitch HA with DVR</a> </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/neutron_stage33.conf">files/neutron_stage33.conf</a> /etc/neutron/neutron.conf
 $ sudo service neutron-server restart
@@ -1326,7 +1329,10 @@ $ sudo service neutron-server restart
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (27) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (27) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr>
+<tr><td>Hint: See <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-ha-dvr.html#deploy-ovs-ha-dvr">Openvswitch HA with DVR</a> </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/openvswitch_agent_stage34.ini">files/openvswitch_agent_stage34.ini</a> /etc/neutron/plugins/ml2/openvswitch_agent.ini
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/l3_agent_stage34.ini">files/l3_agent_stage34.ini</a> /etc/neutron/l3_agent.ini
@@ -1338,7 +1344,10 @@ $ sudo service neutron-l3-agent restart
 <p><p>
 <b>เครื่อง compute</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (28) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (28) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr>
+<tr><td>Hint: See <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-ha-dvr.html#deploy-ovs-ha-dvr">Openvswitch HA with DVR</a> </td></tr>
+</table>
 <pre>
 $ sudo apt-get -y install neutron-l3-agent 
 $
@@ -1352,7 +1361,10 @@ $ sudo service neutron-l3-agent restart
 <p><p>
 <b>เครื่อง compute1</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (29) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (29) มีการกำหนดค่าอะไรใน openvswitch_agent.ini l3_agent.ini </td></tr>
+<tr><td>Hint: See <a href="https://docs.openstack.org/ocata/networking-guide/deploy-ovs-ha-dvr.html#deploy-ovs-ha-dvr">Openvswitch HA with DVR</a> </td></tr>
+</table>
 <pre>
 $ sudo apt-get -y install neutron-l3-agent 
 $
