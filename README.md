@@ -1003,7 +1003,10 @@ $
 <pre>
 $ sudo apt-get -y install glance 
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (14) มีการกำหนดค่าอะไรใน glance-api.conf และ glance-registry.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (14) มีการกำหนดค่าอะไรใน glance-api.conf และ glance-registry.conf </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/glance.html">Install Glance</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-api.conf">files/glance-api.conf</a> /etc/glance/glance-api.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/glance-registry.conf">files/glance-registry.conf</a> /etc/glance/glance-registry.conf
@@ -1078,7 +1081,10 @@ $ sudo apt-get -y install nova-api nova-conductor nova-consoleauth \
   nova-novncproxy nova-scheduler nova-placement-api
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (15) มีการกำหนดค่าอะไรใน nova.conf </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (15) มีการกำหนดค่าอะไรใน nova.conf </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/nova.html">Install Nova</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $
@@ -1101,7 +1107,10 @@ $ sudo service nova-novncproxy restart
 <pre>
 $ sudo apt-get -y install nova-compute
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (16) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (16) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/nova.html">Install Nova</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
@@ -1115,7 +1124,10 @@ $ sudo service nova-compute restart
 $ sudo apt-get -y install nova-compute
 $
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (17) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (17) มีการกำหนดค่าอะไรใน nova.conf nova-compute.conf (บนเครื่อง compute)</td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/nova.html">Install Nova</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova.conf">files/nova.conf</a> /etc/nova/nova.conf
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute1/files/nova-compute.conf">files/nova-compute.conf</a> /etc/nova/nova-compute.conf
@@ -1360,6 +1372,7 @@ $ sudo apt-get -y install openstack-dashboard
 </pre>
 <table>
 <tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (25) มีการกำหนดค่าอะไรใน local_setting.py </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/horizon.html">Install Horizon</a></td></tr>
 </table>
 <p><pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/local_settings.py">files/local_settings.py</a> /etc/openstack-dashboard/local_settings.py
