@@ -716,7 +716,10 @@ $ sudo reboot
 <pre>
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr></table> 
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (1) ขอให้ นศ อธิบายว่า chrony ใช้ทำอะไร และค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร</td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-controller.html">Network Time Protocol on controller</a></td></tr>
+</table> 
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/controller/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -724,7 +727,9 @@ $ sudo service chrony restart
 <p><p>
 <b>เครื่อง network</b>
 <p><p>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (2) ไฟล์ interfaces ต่างจาก interfaces ใน ส่วนที่ 1 อย่างไร </td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/interfaces">files/interfaces</a> /etc/network/interfaces
 </pre>
@@ -742,6 +747,7 @@ $
 $ sudo apt-get -y install chrony
 </pre>
 <table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (3) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-other.html">Network Time Protocol on controller</a>, <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-verify.html">Verify</a></td></tr>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/network/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
@@ -763,7 +769,10 @@ $ sudo ifup ens6
 $ 
 $ sudo apt-get -y install chrony
 </pre>
-<table><tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (5) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr></table>
+<table>
+<tr><td>คำถาม <b>PROJECT</b> วิชา คพ. 449: (5) ค่าที่กำหนดในไฟล์ chrony.conf หมายถึงอะไร </td></tr>
+<tr><td>Hint : See <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-other.html">Network Time Protocol on controller</a>, <a href="https://docs.openstack.org/ocata/install-guide-ubuntu/environment-ntp-verify.html">Verify</a></td></tr>
+</table>
 <pre>
 $ sudo cp <a href="https://github.com/kasidit/openstack-ocata-installer/blob/master/documents/Example.OPSInstaller/compute/files/chrony.conf">files/chrony.conf</a> /etc/chrony/chrony.conf
 $ sudo service chrony restart
