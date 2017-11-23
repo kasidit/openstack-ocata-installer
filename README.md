@@ -80,8 +80,44 @@ network ที่ใช้ในการติดตั้งได้แก่
    ภาพที่ 2 <br>
 จากภาพ สมมุติว่า server มี IP address คือ 10.100.13.13 เราจะใช้ openvswitch bridge จำลอง management network data tunnel network และ vlan network และใช้ KVM จำลอง openstack nodes บนเครื่องนั้น ผู้ใช้สามารถเข้าถึง vm ได้สองวิธี ได้แก่ 
  <ul>
-    <li>การเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server 10.100.13.13 เป็นตัวกลาง เรา assume ว่าผู้อ่านคุ้นเคยกับ ssh tunneling ดังนั้นจะไม่อธิบาย ณ. ที่นี้ 
-    <li>การใช้ VNC client ซึ่งผมจะสอนใน class เมื่อเรียนเรื่องการใช้งาน KVM
+    <li>การเข้าถึงโดยใช้ ssh tunneling ผ่าน putty โดยใช้เครื่อง server 10.100.13.13 เป็นตัวกลาง 
+        <details>
+         <summary><b>สำหรับวิชา cs449</b> นศ สามารถดูวิธีการทำ ssh tunneling ด้วย putty ได้ที่นี่</summary>
+        <p><p>
+        ในส่วนนี้ สมมุติว่าเครื่อง server คือ 10.100.20.133 และ นศ ต้องการ map ports ต่อไปนี้บนเครื่อง localhost ไปที่ endpoints ต่างๆ ได้แก่ localhost port 8080 map ไปที่ 10.1.10.11:80, localhost port 8011 map ไปที่ 10.1.10.11:22, localhost port 8021 map ไปที่ 10.1.10.21:22, localhost port 8031 map ไปที่ 10.1.10.31:22, localhost port 8031 map ไปที่ 10.1.10.31:22 นศ สามารถทำได้ด้วยวิธีต่อไปนี้
+        <ul>
+        <li>ให้เรียก putty และกำหนดค่า 10.100.20.133 ในช่อง Host Name (or IP address) ใน Putty Session window และเขียนชื่อ “mySession1” ในช่อง Save Session ดังภาพที่ s-1
+          <p>
+          <img src="documents/puttytunnel1.png"> <br>
+          ภาพที่ s-1 <br>         
+        <li>ถัดจากนั้นให้ดูที่ Category: ภายใต้ Connection ให้คลิ้กที่ SSH และให้ นศ เลือก Tunnel นศ จะได้ window ในภาพที่ s-2
+         <p>
+          <img src="documents/puttytunnel2.png"> <br>
+          ภาพที่ s-2 <br>
+        <li>ถัดจากนั้น ใน textbox “Source Port” และ “Destination” ให้กำหนดค่า mapping ดังที่ได้กล่าวข้างต้น และเมื่อกำหนดค่าตามแต่ละบรรทัดในตารางแล้วให้กดปุ่ม “Add” นศ จะได้ภาพดังภาพที่ s-3
+         <p>
+          <img src="documents/puttytunnel3.png"> <br>
+          ภาพที่ s-3 <br>
+        <li>หลังจากนั้น ให้ นศ คลิ้กที่ “Session” ภายใต้กล่อง Category: และให้กดปุ่ม “Save” session “mySession1” นี้ดังภาพที่ s-4
+         <p>
+          <img src="documents/puttytunnel4.png"> <br>
+          ภาพที่ s-4 <br>
+        <li>หลังจากนั้นให้ นศ login ด้วยการ load “mySession1” profile บน putty และ login เข้าสู่เครื่อง 10.100.20.133 โดยใช้ login id “cs449project” และพาสเวิด “openstack” ดังภาพที่ s-5
+         <p>
+          <img src="documents/puttytunnel5.png"> <br>
+          ภาพที่ s-5 <br>
+        <li>หลังจาก login เสร็จแล้วให้ นศ เปิด session นั้นทิ้งเอาไว้ และมีทางเลือกที่จะ login เข้าสู่เครื่อง controller network compute และ compute1
+        <li>เปิด putty session ใหม่ดังในภาพที่ s-6 และ s-7 และกำหนดให้ Host Name (or IP address) เป็น “localhost” และ Port เป็น 8011 ซึ่งจะทำให้สามารถ login ผ่าน SSH Tunnel ที่สร้างไว้ใน session ก่อนหน้าเข้าสู่เครื่อง 10.1.10.11 
+         <p>
+          <img src="documents/puttytunnel6.png"> <br>
+          ภาพที่ s-6 <br>
+         <p>
+          <img src="documents/puttytunnel7.png"> <br>
+          ภาพที่ s-7 <br>
+        <li>
+        </ul>
+        </details>
+    <li>การใช้ VNC client 
  </ul>
  </details>
  </td></tr> 
