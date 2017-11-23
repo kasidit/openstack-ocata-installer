@@ -118,6 +118,19 @@ network ที่ใช้ในการติดตั้งได้แก่
         </ul>
         </details>
     <li>การใช้ VNC client 
+     <details>
+         <summary><b>สำหรับวิชา cs449</b> นศ สามารถดูวิธีการใช้ vnc client ได้ที่นี่</summary>
+        <p><p>
+        สำหรับเครื่อง controller network compute compute1 ทุกเครื่องคือ kvm vm ที่มี vnc server รันอยู่ที่ port ต่อไปนี้ เครื่อง controller vm มี vnc server ที่ vnc endpoint 10.100.20.133:86 เครื่อง network vm มี vnc server ที่ vnc endpoint 10.100.20.133:87 เครื่อง compute vm มี vnc server ที่ vnc endpoint 10.100.20.133:88 เครื่อง compute1 vm มี vnc server ที่ vnc endpoint 10.100.20.133:89 
+        <p><p>
+        นศ สามารถติดตั้ง VNC เช่น TightVNC viewer บนเครื่อง client ของ นศ และเข้าถึงเครื่อง controller network compute และ compute1 ด้วย VNC viewer software ดังภาพที่ s-8 และภาพที่ s-9 
+         <p>
+          <img src="documents/puttytunnel8.png"> <br>
+          ภาพที่ s-8 <br>
+         <p>
+          <img src="documents/puttytunnel9.png"> <br>
+          ภาพที่ s-9 <br>      
+     </details>
  </ul>
  </details>
  </td></tr> 
