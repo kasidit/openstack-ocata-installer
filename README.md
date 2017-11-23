@@ -114,7 +114,6 @@ network ที่ใช้ในการติดตั้งได้แก่
          <p>
           <img src="documents/puttytunnel7.png"> <br>
           ภาพที่ s-7 <br>
-        <li>
         </ul>
         </details>
     <li>การใช้ VNC client 
