@@ -369,7 +369,7 @@ openstack@compute1:~$
 <p><p>
 <i><a id="btrfssnapshot"><h4>1.3 การสร้าง snapshot บน btrfs บน ubuntu 16.04 host</h4></a></i>
 <p>
-นศ สามารถติดตั้ง ubuntu 16.04 บนเครื่อง controller network compute compute1 hosts และกำหนดให้แต่ละเครื่องใช้ btrfs เมื่อกำหนดค่า disk partitioning
+นศ สามารถติดตั้ง btrfs บน ubuntu 16.04 บนเครื่อง controller network compute compute1 hosts ระหว่างการติดตั้ง OS เมื่อกำหนด disk partitioning
 <ul>
 <li>
 <details>
