@@ -367,7 +367,7 @@ openstack@compute1:~$
 <p><p>
 นศ สามารถดูคลิป youtube ประกอบได้ที่ (ผมไม่ได้เตียม script พูดประกอบ clip ขอให้ทนฟังการพูดตะกุกตะกักหน่อยนะครับ :-) ) <a href="https://www.youtube.com/watch?v=AkDoef8gUJY&index=1&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">set up virtual gateway on controller</a> และ <a href="https://www.youtube.com/watch?v=N3AfvrlJw2M&index=2&list=PLmUxMbTCUhr4vYsaeEKVkvAGF5K1Tw8oJ">install and setup network, compute, and compute1 vbox vms</a>
 <p><p>
-<i><a id="#btrfssnapshot"><h4>1.3 การสร้าง snapshot บน btrfs บน ubuntu 16.04 host</h4></a></i>
+<i><a id="btrfssnapshot"><h4>1.3 การสร้าง snapshot บน btrfs บน ubuntu 16.04 host</h4></a></i>
 <p>
 นศ สามารถติดตั้ง ubuntu 16.04 บนเครื่อง controller network compute compute1 hosts และกำหนดให้แต่ละเครื่องใช้ btrfs เมื่อกำหนดค่า disk partitioning
 <ul>
