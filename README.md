@@ -369,6 +369,8 @@ openstack@compute1:~$
 <p><p>
 <i><a id="btrfssnapshot"><h4>1.3 การสร้าง snapshot บน btrfs บน ubuntu 16.04 host</h4></a></i>
 <p>
+เนื้อหาในส่วนนี้ใช้สำหรับผู้ที่ประสงค์ใช้ btrfs เป๋น file system ของ host computers ที่จะใช้ติดตั้ง openstack และต้องการทำ snapshot ของ partition ที่ใช้ในการติดตั้งบนแต่ละเครื่องเป็นระยะๆ ถ้า นศ ไม่ได้ใช้ btrfs ก็ให้ข้ามส่วนนี้ไป
+<p><p>
 นศ สามารถติดตั้ง btrfs บน ubuntu 16.04 บนเครื่อง controller network compute compute1 hosts ระหว่างการติดตั้ง OS เมื่อกำหนด disk partitioning
 <ul>
 <li>
