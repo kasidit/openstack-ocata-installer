@@ -74,7 +74,7 @@ network ที่ใช้ในการติดตั้งได้แก่
 <table>
 <tr><td>
 <details>
- <summary><b>สำหรับวิชา คพ. 449: คำอธิบายการจำลองการติดตั้งโดยใช้ KVM virtual machines และ openvswitch network bridges</b></summary> 
+ <summary><b>[กดเพื่อดูรายละเอียด] สำหรับวิชา คพ. 449: คำอธิบายการจำลองการติดตั้งโดยใช้ KVM virtual machines และ openvswitch network bridges</b></summary> 
 เราจะจำลองการติดตั้งโดยใช้ kvm vm 4 เครื่องเชื่อมต่อกับ openvswitch network bridges บนเครื่อง server ใน lab ดังภาพที่ 2 
   <p>
   <img src="documents/architecturetunnel.png"> <br>
